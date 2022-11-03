@@ -1,0 +1,12 @@
+@import '../../style/utils/mixin.scss';
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+
+    @include large-screens {
+     padding: 40px 100px;   
+    }
+    
+}

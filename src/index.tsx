@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Flat from "./pages/Flat";
 import About from "./pages/About";
 import Error from "./pages/Error";
+import Header from "./components/Header"
 import Footer from "./components/Footer";
 
 const root = ReactDOM.createRoot(
@@ -17,6 +18,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <Router>
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/flat/:id" element={<Flat />} />
