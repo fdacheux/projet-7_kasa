@@ -1,6 +1,6 @@
 import UnderConstruction from '../../assets/images/underConstruction.svg'
 
-function App() {
+function Home() {
   return (
     <div className="App" style={{display : 'flex', flexDirection: 'column'}}>
       <h1 style={{ textAlign: 'center', marginBottom: '32px', color: '#FF6060' }} >Site under construction</h1>
@@ -9,4 +9,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;

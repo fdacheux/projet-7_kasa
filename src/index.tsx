@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./pages/Home";
+import Home from "./pages/Home";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Flat from "./pages/Flat";
@@ -15,7 +15,7 @@ root.render(
   <React.StrictMode>
     <Router>
       <Routes>
-        <Route path="/" element={<App />} />
+        <Route path="/" element={<Home />} />
         <Route path="/flat/:id" element={<Flat />} />
         <Route path="/about" element={<About />} />
         <Route path="*" element={<Error />} />
