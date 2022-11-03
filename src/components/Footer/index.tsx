@@ -1,7 +1,14 @@
+import WhiteLogo from '../../assets/images/white-logo.svg'
+import style from './Footer.module.scss'
 
 function Footer() {
     
-    return <div>I'm a footer</div>
+    return (
+        <footer className={style.footer}>
+            <img className={style.logo} src={WhiteLogo} alt="kasa logo" />
+            <div className={style.div}>© 2020 Kasa. All rights reserved</div>
+        </footer>
+    )
 }
 
 export default Footer
