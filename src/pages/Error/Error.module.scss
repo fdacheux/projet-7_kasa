@@ -1,4 +1,4 @@
-@import '../../utils/style/utils/mixin.scss';
+@import '../../style/utils/mixin.scss';
 
 .errorWrapper {
   display: flex;
@@ -14,16 +14,17 @@
 
 .title {
   font-weight: 700;
-  font-size: 198px;
+  font-size: 25vw;
 }
 
 .errorMessage {
-  font-size: 18px;
+  font-size: 4vw;
+  font-weight: 500;
 }
 
 .homeLink {
   text-decoration: underline;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 @include large-screens {
@@ -43,9 +44,9 @@
 
 @include xsmall-screens {
   .title {
-    font-size: 128px;
+    font-size: 96px;
   }
   .errorMessage {
-    font-size: 16px;
+    font-size: 24px;
   }
 }
