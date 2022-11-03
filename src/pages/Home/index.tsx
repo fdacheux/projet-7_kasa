@@ -1,4 +1,4 @@
-import UnderConstruction from '../../assets/images/underConstruction.svg'
+import UnderConstruction from '../../assets/images/under-construction.svg'
 
 function Home() {
   return (

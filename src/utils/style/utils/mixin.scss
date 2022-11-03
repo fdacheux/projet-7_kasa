@@ -1,0 +1,23 @@
+@import "./variables.scss";
+
+@mixin is-light-background($light-background: true) {
+  @if $light-background {
+    background-color: $colour-secondary;
+    color: $colour-primary;
+  } @else {
+    background-color: $colour-primary;
+    color: $colour-secondary;
+  }
+}
+
+@mixin xsmall-screens {
+    @media screen and (max-width: map-get($max-width, small)) {
+        @content;
+    }
+}
+
+@mixin large-screens {
+    @media screen and (min-width: map-get($min-width, large)) {
+        @content;
+    }
+}

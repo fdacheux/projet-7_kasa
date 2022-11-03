@@ -1,0 +1,22 @@
+$colour-primary: #ff6060;
+$colour-secondary: #fff;
+$colour-tertiary: #f6f6f6;
+
+
+// Responsive :
+
+$min-width: (
+    small: 576px,
+    medium: 768px,
+    large: 992px,
+    x-large: 1200px,
+    xx-large: 1400px
+);
+
+$max-width: (
+    xsmall: 575px,
+    small: 767px,
+    medium: 991px,
+    large: 1199px,
+    x-large: 1399px
+);

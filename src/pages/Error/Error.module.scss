@@ -1,0 +1,51 @@
+@import '../../utils/style/utils/mixin.scss';
+
+.errorWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.errorBlock {
+  text-align: center;
+  margin-bottom: 133px;
+  padding: 0 10px;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 198px;
+}
+
+.errorMessage {
+  font-size: 18px;
+}
+
+.homeLink {
+  text-decoration: underline;
+  font-size: 14px;
+}
+
+@include large-screens {
+  .title {
+    font-size: 288px;
+  }
+  .errorMessage {
+    font-size: 36px;
+  }
+  .homeLink {
+    font-size: 18px;
+  }
+  .errorBlock {
+    margin-bottom: 96px;
+  }
+}
+
+@include xsmall-screens {
+  .title {
+    font-size: 128px;
+  }
+  .errorMessage {
+    font-size: 16px;
+  }
+}

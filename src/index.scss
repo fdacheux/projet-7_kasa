@@ -1,0 +1,9 @@
+@import "./utils/style/utils/mixin.scss";
+
+body {
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  @include is-light-background(true);
+}
+
