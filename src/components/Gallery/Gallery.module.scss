@@ -1,0 +1,11 @@
+@import '../../style/utils/mixins.scss';
+
+.gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 25px;
+    @include medium-large-screens{
+        background: #F6F6F6;
+    }
+}

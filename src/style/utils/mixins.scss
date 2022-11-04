@@ -24,6 +24,12 @@
   }
 }
 
+@mixin medium-large-screens {
+  @media screen and (min-width: map-get($min-width, medium)) {
+    @content;
+}
+}
+
 @mixin large-screens {
     @media screen and (min-width: map-get($min-width, large)) {
         @content;
