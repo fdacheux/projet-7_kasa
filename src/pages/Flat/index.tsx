@@ -1,7 +1,11 @@
 
 function Flat() {
     
-    return <div>Flat</div>
+    return (
+        <main>
+            Flat
+        </main>
+    )
 
 }
 

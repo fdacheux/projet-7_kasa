@@ -1,10 +1,13 @@
+import style from './Header.module.scss';
 import Navbar from "../Navbar"
+import KasaLogo from "../../assets/images/logo.svg"
 
 function Header() {
   return (
-    <div>
-        I'm a header !
-    </div>
+    <header className={style.header}>
+      <img className={style.logo} src={KasaLogo} alt="Kasa : site de location d'appartements" />
+      <Navbar />
+    </header>
   )
 }
 

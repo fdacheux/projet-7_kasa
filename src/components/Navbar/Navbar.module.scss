@@ -1,0 +1,32 @@
+@import '../../style/utils/mixins.scss';
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  // padding-top: 17px;
+  &__links {
+    font-size: 16px;
+    @include large-screens{
+        font-size: 24px;
+    }
+    @include small-screens{
+      text-transform: uppercase;
+    }
+    @include xsmall-screens{
+      font-size: 14px;
+    }
+  }
+  &__aboutLink {
+    padding-left: 24px;
+    @include large-screens{
+        padding-left: 57px;
+    }
+    @include xsmall-screens{
+      padding-left: 12px;
+    }
+  }
+}
+
+.underline {
+  text-decoration: underline;
+}
