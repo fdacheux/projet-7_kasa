@@ -1,12 +1,23 @@
-@import '../../style/utils/mixin.scss';
+@import '../../style/utils/mixins.scss';
 
 .header{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 20px;
 
     @include large-screens {
      padding: 40px 100px;   
     }
     
+}
+
+.logo{
+    max-width: 145px;
+    @include large-screens{
+        max-width: 211px;
+    }
+    @include xsmall-screens{
+        max-width: 80px;
+    }
 }

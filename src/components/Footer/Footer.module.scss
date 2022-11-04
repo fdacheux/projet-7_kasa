@@ -1,5 +1,5 @@
 @import "../../style/utils/variables.scss";
-@import "../../style/utils/mixin.scss";
+@import "../../style/utils/mixins.scss";
 
 footer {
   display: flex;
@@ -16,7 +16,16 @@ footer {
 }
 
 @include small-screens {
-    .div {
-        font-size: 14px;
-    }
+  .div {
+    font-size: 14px;
+  }
+}
+
+@include xsmall-screens {
+  .div {
+    font-size: 12px;
+  }
+  .logo {
+    max-width: 100px;
+  }
 }
