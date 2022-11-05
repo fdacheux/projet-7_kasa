@@ -1,16 +1,34 @@
-@import '../../style/utils/mixins.scss';
+@import "../../style/utils/mixins.scss";
 
 .gallery {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 25px;
-    width: 100%;
-    @include medium-large-screens{
-        background: #F6F6F6;
-        flex-flow: row wrap;
-        row-gap: 50px;
-        justify-content: space-between;
-        padding: 56px 50px;
-    }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 25px;
+  width: 100%;
+  @include medium-large-screens {
+    background: #f6f6f6;
+    flex-flow: row wrap;
+    row-gap: 50px;
+    justify-content: space-between;
+    padding: 56px 50px;
+  }
+}
+
+.cardContainer {
+  display: fit-content;
+}
+
+.cardLinks {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  min-height: 340px;
+
+  @include medium-screens {
+    width: 50%;
+  }
+  @include large-screens {
+    max-width: 33%;
+  }
 }
