@@ -1,9 +1,15 @@
+import Loader from "../../components/Loader"
+// import { useFindFlats } from "../../utils/hooks"
 
 function Flat() {
+
     
     return (
         <main>
-            Flat
+            <div className="test">
+                <h2>Flat</h2>
+            </div>
+            <Loader />
         </main>
     )
 
