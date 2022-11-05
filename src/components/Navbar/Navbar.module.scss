@@ -3,7 +3,6 @@
 .navbar {
   display: flex;
   justify-content: space-between;
-  // padding-top: 17px;
   &__links {
     font-size: 16px;
     @include medium-large-screens{
