@@ -6,7 +6,7 @@
     align-items: center;
     padding: 20px;
 
-    @include large-screens {
+    @include medium-large-screens {
      padding: 40px 100px;   
     }
     

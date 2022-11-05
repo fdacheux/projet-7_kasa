@@ -6,7 +6,7 @@
   // padding-top: 17px;
   &__links {
     font-size: 16px;
-    @include large-screens{
+    @include medium-large-screens{
         font-size: 24px;
     }
     @include small-screens{
