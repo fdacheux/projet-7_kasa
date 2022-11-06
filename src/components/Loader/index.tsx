@@ -1,5 +1,5 @@
 import style from "./Loader.module.scss";
-import LogoLoader from "../../assets/images/logo-loader.png";
+import LogoLoader from "../../assets/images/logo.svg";
 
 const Loader = () => {
   return (

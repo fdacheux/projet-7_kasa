@@ -1,11 +1,13 @@
 .logoContainer {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  width: 100%;
   transform: translateZ(1px);
 }
 .logo {
   display: inline-block;
 //   width: 64px;
-  height: 46px;
+  height: 100px;
   margin: 8px;
 //   border-radius: 50%;
   animation: spinning-logo 8s cubic-bezier(0, 0.2, 0.8, 1) infinite;
