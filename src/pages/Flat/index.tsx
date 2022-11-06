@@ -1,19 +1,37 @@
-import Loader from "../../components/Loader"
-// import { useFindFlats } from "../../utils/hooks"
+import Loader from "../../components/Loader";
+import useFindFlat from "../../utils/hooks/find-flat.hook";
+import { useParams } from "react-router-dom";
+import { useEffect } from "react";
 
-function Flat() {
+const Flat = () => {
+  let { id } = useParams();
 
-    
-    return (
-        <main>
-            <div className="test">
-                <h2>Flat</h2>
-            </div>
-            <Loader />
-        </main>
-    )
+  const { data, isLoading, error } = useFindFlat(id || "");
+  let flat = data ? { ...data[0] } : undefined;
 
-}
+  useEffect(() => {
+    console.log(isLoading);
+  }, [isLoading]);
 
+  return (
+    <section>
+      {isLoading ? (
+        <Loader />
+      ) : !error ? (
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <span>{flat?.title}</span>
+          <span>{flat?.rating}</span>
+          <img
+            src={flat?.cover}
+            alt=""
+            style={{ height: "125px", width: "125px" }}
+          />
+        </div>
+      ) : (
+        <span data-testid="error">'{error}'</span>
+      )}
+    </section>
+  );
+};
 
-export default Flat
+export default Flat;

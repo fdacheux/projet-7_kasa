@@ -1,6 +1,6 @@
 import Card from "../Card";
 import style from "./Gallery.module.scss";
-import { useFindFlats } from "../../utils/hooks";
+import { useFindFlats } from "../../utils/hooks/find-flats.hook";
 import Loader from "../Loader";
 import { Link } from "react-router-dom";
 
