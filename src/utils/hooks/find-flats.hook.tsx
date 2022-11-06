@@ -1,8 +1,9 @@
 import { useCallback, useEffect, useState } from "react";
 import Data from "../../data/data.json";
+import { IFlat } from "../../models/flat.model";
 
 export const useFindFlats = () => {
-  const [data, setData] = useState<any[]>();
+  const [data, setData] = useState<IFlat[]>();
   const [isLoading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 

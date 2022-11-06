@@ -1,22 +1,9 @@
 import { useCallback, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Data from "../../data/data.json";
+import { IFlat } from "../../models/flat.model";
 
-interface IFlat {
-  id: string;
-  title: string;
-  cover: string;
-  pictures: string[];
-  description: string;
-  host: {
-    name: string;
-    picture: string;
-  };
-  rating: string;
-  location: string;
-  equipments: string[];
-  tags: string[];
-}
+
 
 const useFindFlat = (flatId: string) => {
   const [data, setData] = useState<IFlat[]>();
