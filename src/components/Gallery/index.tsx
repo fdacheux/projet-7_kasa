@@ -5,7 +5,6 @@ import Loader from "../Loader";
 import { Link } from "react-router-dom";
 
 function Gallery() {
-
   const { data, isLoading, error } = useFindFlats();
 
   return !error ? (
