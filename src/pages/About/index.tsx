@@ -5,7 +5,6 @@ import style from "./About.module.scss";
 import aboutData from "./About.data.json";
 
 function About() {
-
   return (
     <main>
       <Banner isHomepage={false} hasTitle={false} imgUrl={bannerAbout} />

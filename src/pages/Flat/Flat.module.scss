@@ -1,0 +1,10 @@
+@import '../../style/utils/mixins.scss';
+
+.title {
+    font-weight: 500;
+    font-size: 1.3em;
+    line-height: 1.2em;
+    @include medium-large-screens{
+        font-size: 2.3em;
+    }
+}
