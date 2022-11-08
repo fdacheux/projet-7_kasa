@@ -1,14 +1,13 @@
 import Banner from "../../components/Banner";
 import Gallery from "../../components/Gallery";
-import bannerHome from "../../assets/images/home-banner-img.jpg"
-import style from './Home.module.scss'
+import bannerHome from "../../assets/images/home-banner-img.webp"
 
-const title = "Chez vous, partout et ailleurs";
+const title = `Chez vous, partout et ailleurs`;
 
 function Home() {
   return (
-    <main className={style.main} style={{ display: 'flex', flexDirection: 'column' }}>
-      <Banner hasTitle={true} title={title} imgUrl={bannerHome} />
+    <main>
+      <Banner isHomepage hasTitle={true} title={title} imgUrl={bannerHome} />
       <Gallery />
     </main>
   );
