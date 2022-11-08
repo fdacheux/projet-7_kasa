@@ -5,7 +5,8 @@
     width: 100%;
     margin-top: 2em;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    gap: 1.8em;
     @include medium-screens{
         margin-top: 1em;
     }
