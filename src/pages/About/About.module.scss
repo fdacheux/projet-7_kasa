@@ -1,0 +1,12 @@
+@import '../../style/utils/mixins.scss';
+
+.aboutSection {
+    max-width: 1023px;
+    width: 100%;
+    margin-top: 2em;
+    display: flex;
+    justify-content: center;
+    @include medium-screens{
+        margin-top: 1em;
+    }
+}

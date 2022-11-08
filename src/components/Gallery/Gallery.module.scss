@@ -8,6 +8,7 @@
   border-radius: 25px;
   width: 100%;
   @include medium-large-screens {
+    margin-top: 5vh;
     background: #f6f6f6;
     flex-flow: row wrap;
     row-gap: 50px;

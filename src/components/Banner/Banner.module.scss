@@ -4,12 +4,6 @@
 .banner {
   width: 100%;
   position: relative;
-  @include medium-screens {
-    margin-bottom: 32px;
-  }
-  @include large-screens {
-    margin-bottom: 1vh;
-  }
 }
 
 .bannerImg {

@@ -8,7 +8,7 @@ function Gallery() {
   const { data, isLoading, error } = useFindFlats();
 
   return !error ? (
-    <section>
+    <section className={style.gallerySection}>
       {isLoading ? (
         <Loader />
       ) : (
