@@ -2,7 +2,6 @@
 @import "../../style/utils/mixins.scss";
 
 .accordion {
-//   max-width: 1023px;
   min-width: 100%;
 }
 
@@ -23,11 +22,34 @@
       font-size: 1.3em;
     }
   }
+  &__chevron {
+    animation: rotate-chevron-up 0.3s ease-in forwards;
+  }
+  &__chevronActive {
+    animation: rotate-chevron-down 0.3s ease-in forwards;
+  }
 }
+
+@keyframes rotate-chevron-down {
+    0% {
+              transform: rotate(180deg);
+    }
+    100% {
+              transform: rotate(0deg);
+    }
+  }
+
+@keyframes rotate-chevron-up {
+    0% {
+              transform: rotate(0deg);
+    }
+    100% {
+              transform: rotate(180deg);
+    }
+  }
 
 .descriptionBox {
   border-radius: 5px;
-  // min-height: 143px;
   background-color: $colour-tertiary;
   padding: 1.1em;
   &__text {
