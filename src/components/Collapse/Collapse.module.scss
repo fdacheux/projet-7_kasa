@@ -1,0 +1,40 @@
+@import "../../style/utils/variables.scss";
+@import "../../style/utils/mixins.scss";
+
+.accordion {
+  max-width: 1023px;
+}
+
+.headerButton {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: none;
+  border-radius: 5px;
+  height: 40px;
+  padding: 1em;
+  @include is-light-background(false);
+  width: 100%;
+  &__header {
+    font-weight: 500;
+    font-size: 1.1em;
+    @include medium-large-screens {
+      font-size: 1.3em;
+    }
+  }
+}
+
+.descriptionBox {
+  border-radius: 5px;
+  // min-height: 143px;
+  background-color: $colour-tertiary;
+  padding: 1.1em;
+  &__text {
+    font-size: 1.1em;
+    line-height: 24px;
+    @include medium-large-screens {
+      font-size: 1.3em;
+      line-height: 32px;
+    }
+  }
+}
