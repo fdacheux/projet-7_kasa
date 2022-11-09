@@ -3,11 +3,9 @@
 
 .avatar{
     border-radius: 50%;
-    width: 32px;
-    height: 32px;
+    @include sizing-element(32px, 32px);
     @include medium-large-screens{
-        width: 64px;
-        height: 64px;
+        @include sizing-element(64px, 64px);
     }
 
 }

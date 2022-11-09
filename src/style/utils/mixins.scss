@@ -2,14 +2,18 @@
 
 @mixin border-radius {
   border-radius: 10px;
-  @include medium-large-screens {
+  @include medium-large-screens{
     border-radius: 25px;
   }
 }
 
+@mixin sizing-element($height, $width){
+  height: $height;
+  width: $width;
+}
+
 @mixin hundred-percent-sizing {
-  width: 100%;
-  height: 100%;
+  @include sizing-element(100%, 100%)
 }
 
 @mixin linearGradient-transparent-mask {
@@ -38,7 +42,7 @@
   }
 }
 
-// Responsive :
+// Responsive : 
 
 @mixin xsmall-screens {
   @media screen and (max-width: map-get($max-width, xsmall)) {
@@ -69,6 +73,3 @@
     @content;
   }
 }
-
-
-
