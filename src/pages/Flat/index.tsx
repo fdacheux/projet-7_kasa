@@ -5,6 +5,7 @@ import Tags from "../../components/Tags";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import style from "./Flat.module.scss";
+import Collapse from "../../components/Collapse";
 
 const Flat = () => {
   let { id } = useParams();
@@ -31,6 +32,18 @@ const Flat = () => {
           <h2>{flat.location}</h2>
           <Tags tags={flat.tags} />
           <Ratings stars={flat.rating} />
+          <Collapse id={flat.id} title="Description">
+            {flat.description}
+          </Collapse>
+          <Collapse id={flat.id} title="Équipements">
+            {
+              <ul>
+                {flat.equipments.map((element) => (
+                  <li>{element}</li>
+                ))}
+              </ul>
+            }
+          </Collapse>
         </div>
       ) : (
         <span data-testid="error">'{error}'</span>

@@ -10,7 +10,7 @@ function About() {
       <Banner isHomepage={false} hasTitle={false} imgUrl={bannerAbout} />
       <section className={style.aboutSection}>
         {aboutData.map((element) => (
-          <Collapse id={element.id} title={element.title} text={element.text} />
+          <Collapse id={element.id} title={element.title}>{element.text}</Collapse> 
         ))}
       </section>
     </main>

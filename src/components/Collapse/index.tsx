@@ -31,7 +31,7 @@ const Collapse = (props: IProps) => {
       </button>
       {isCollapsed && (
         <div className={style.descriptionBox}>
-          <p className={style.descriptionBox__text}>{props.text}</p> {/*children*/}
+          <p className={style.descriptionBox__text}>{props.children}</p> {/*children*/}
         </div>
       )}
     </div>
