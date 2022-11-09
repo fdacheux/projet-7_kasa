@@ -8,20 +8,13 @@
   margin: 10px 20px;
   max-height: 300px;
   max-width: 500px;
-  // width: 100%;
-
-  // @include medium-screens {
-  //   width: 40%;
-  // }
-  // @include large-screens {
-  //   max-width: 27%;
-  // }
+  width: 100%;
 }
 
 .imgBox {
   overflow: hidden;
   display: flex;
-  @include border-radius; 
+  @include border-radius;
 
   @include hundred-percent-sizing;
   &:before {
