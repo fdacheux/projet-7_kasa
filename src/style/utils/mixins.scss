@@ -2,7 +2,7 @@
 
 @mixin border-radius {
   border-radius: 10px;
-  @include medium-large-screens{
+  @include medium-large-screens {
     border-radius: 25px;
   }
 }
@@ -38,7 +38,7 @@
   }
 }
 
-// Responsive : 
+// Responsive :
 
 @mixin xsmall-screens {
   @media screen and (max-width: map-get($max-width, xsmall)) {
@@ -69,3 +69,6 @@
     @content;
   }
 }
+
+
+

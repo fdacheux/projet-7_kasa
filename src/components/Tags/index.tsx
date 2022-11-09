@@ -1,10 +1,16 @@
+import style from "./Tags.module.scss";
+import { useEffect } from "react"
 
-import style from './Tags.module.scss'
-const Tags = (props: string[]) => {
-    return (
+const Tags = ({ tags }  :  any) => {
+    const tagsArray = tags;
+    useEffect(() => { console.log(tagsArray) },[tagsArray])
+  return (
     <div className={style.tagsContainer}>
+      {tagsArray.map((tag: string) => (
+        <div className={style.tag}>{tag}</div>
+      ))}
     </div>
-  )
-}
+  );
+};
 
-export default Tags
+export default Tags;

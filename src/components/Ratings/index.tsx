@@ -1,7 +1,11 @@
 import FullStar from "../../assets/images/full-star.svg";
 import EmptyStar from "../../assets/images/empty-star.svg";
 
-const Ratings = ({ stars }: any) => {
+interface Iratings {
+  stars: string
+}
+
+const Ratings = ({ stars }: Iratings) => {
   const fullStars = parseInt(stars);
 
   const renderStars = (count: number): React.ReactElement[] => {

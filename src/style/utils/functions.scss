@@ -1,2 +1,15 @@
+@import "./variables.scss";
+@import "./mixins.scss";
 
- 
+@function get-radius($size) {
+  @if $size == "small" {
+    $border-radius: map-get($border-radius, $size);
+    @return $border-radius;
+  } @else if $size == "medium" {
+    $border-radius: map-get($border-radius, $size);
+    @return $border-radius;
+  } @else {
+    $border-radius: map-get($border-radius, $size);
+    @return $border-radius;
+  }
+}
