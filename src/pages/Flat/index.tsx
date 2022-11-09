@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import style from "./Flat.module.scss";
 import Collapse from "../../components/Collapse";
+import Host from "./Components/Host";
 
 const Flat = () => {
   let { id } = useParams();
@@ -32,6 +33,7 @@ const Flat = () => {
           <h2>{flat.location}</h2>
           <Tags tags={flat.tags} />
           <Ratings stars={flat.rating} />
+          <Host host={flat.host} />
           <Collapse id={flat.id} title="Description">
             {flat.description}
           </Collapse>
@@ -39,7 +41,7 @@ const Flat = () => {
             {
               <ul>
                 {flat.equipments.map((element) => (
-                  <li>{element}</li>
+                  <li key={`tag-${element}`}>{element}</li>
                 ))}
               </ul>
             }
