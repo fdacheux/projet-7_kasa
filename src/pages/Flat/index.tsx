@@ -19,15 +19,16 @@ const Flat = () => {
     <section>
       {isLoading ? (
         <Loader />
-      ) : !error ? (
+      ) : !error && flat ? (
         <div style={{ display: "flex", flexDirection: "column" }}>
           <img
-            src={flat?.cover}
+            src={flat.cover}
             alt=""
             style={{ height: "125px", width: "125px" }}
           />
-          <h1 className={style.title}>{flat?.title}</h1>
-          <Ratings stars={flat?.rating} />
+          <h1 className={style.title}>{flat.title}</h1>
+          <h2>{flat.location}</h2>
+          <Ratings stars={flat.rating} />
         </div>
       ) : (
         <span data-testid="error">'{error}'</span>
