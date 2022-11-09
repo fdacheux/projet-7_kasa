@@ -1,0 +1,6 @@
+@import '../../style/utils/mixins.scss';
+
+.tagsContainer {
+    @include is-light-background(false);
+    border-radius: 10px;
+} 
