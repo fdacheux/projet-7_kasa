@@ -1,0 +1,25 @@
+@import '../../style/utils/mixins.scss';
+@import '../../style/utils/functions.scss';
+
+.tagsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 8px;
+} 
+
+.tag {
+    @include is-light-background(false);
+    border-radius: get-radius('small');
+    margin-right: 10px;
+    height: 25px;
+    width: 155px;
+    text-align: center;
+    line-height: 25px;
+    font-size: 16px;
+    @include medium-large-screens{
+        width: 200px;
+        height: 30px;
+        line-height: 30px;
+        border-radius: get-radius('medium');
+    }
+}

@@ -1,6 +1,7 @@
 import Loader from "../../components/Loader";
 import useFindFlat from "../../utils/hooks/find-flat.hook";
 import Ratings from "../../components/Ratings";
+import Tags from "../../components/Tags";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import style from "./Flat.module.scss";
@@ -28,6 +29,7 @@ const Flat = () => {
           />
           <h1 className={style.title}>{flat.title}</h1>
           <h2>{flat.location}</h2>
+          <Tags tags={flat.tags} />
           <Ratings stars={flat.rating} />
         </div>
       ) : (
