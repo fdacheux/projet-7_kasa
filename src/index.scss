@@ -24,7 +24,6 @@ main {
   display: flex;
   flex-direction: column;
   margin: 20px;
-
   flex-grow: 2;
   @include medium-large-screens {
     margin: 20px 100px 50px 100px;

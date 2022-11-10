@@ -8,8 +8,10 @@
   } @else if $size == "medium" {
     $border-radius: map-get($border-radius, $size);
     @return $border-radius;
-  } @else {
+  } @else if $size == "large"{
     $border-radius: map-get($border-radius, $size);
     @return $border-radius;
+  } @else {
+    @return 0;
   }
 }

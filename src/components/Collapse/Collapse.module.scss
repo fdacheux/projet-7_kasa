@@ -67,7 +67,9 @@
       line-height: 32px;
     }
   }
-  &.halfWidthBox {
-    height: 100%;
+  @include medium-large-screens {
+    &.halfWidthBox {
+      height: 100%;
+    }
   }
 }

@@ -1,10 +1,17 @@
 @import "../../style/utils/mixins.scss";
 
-.flatContent{
-    display: flex;
-    flex-direction: column;
-    align-content: space-between;
-    height: 90%;
+.flatContent {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  height: 90%;
+}
+
+.descriptionHeaderBox {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-between;
 }
 
 .title {
@@ -19,8 +26,15 @@
 .subtitle {
   font-weight: 500;
   font-size: 1.1em;
-  @include medium-large-screens{
+  @include medium-large-screens {
     font-size: 1.3em;
+  }
+}
+
+.descriptionAside {
+  display: flex;
+  @include medium-large-screens {
+    flex-direction: column-reverse;
   }
 }
 
@@ -29,13 +43,21 @@
 }
 
 .descriptionContent {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    row-gap: 20px;
-    width: 100%;
-    @include medium-large-screens{
-        flex-direction: row;
-    }
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  row-gap: 20px;
+  @include medium-large-screens {
+    flex-direction: row;
+  }
 }
 
+.equipmentsList {
+  font-size: 1.1em;
+  line-height: 24px;
+  @include medium-large-screens {
+    font-size: 1.3em;
+    line-height: 32px;
+  }
+}

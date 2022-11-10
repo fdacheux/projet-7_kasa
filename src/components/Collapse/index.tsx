@@ -12,7 +12,12 @@ const Collapse = (props: IProps) => {
   }, [isCollapsed]);
 
   return (
-    <article className={`${style.accordion} ${props.isHalfWidth && style.accordionHalfWidth}`} key={props.id} >
+    <article
+      className={`${style.accordion} ${
+        props.isHalfWidth && style.accordionHalfWidth
+      }`}
+      key={props.id}
+    >
       <button
         onClick={changeCollapse}
         className={style.headerButton}
@@ -30,8 +35,12 @@ const Collapse = (props: IProps) => {
         />
       </button>
       {isCollapsed && (
-        <div className={`${style.descriptionBox} ${props.isHalfWidth && style.halfWidthBox}`}>
-          <p className={style.descriptionBox__text}>{props.children}</p> {/*children*/}
+        <div
+          className={`${style.descriptionBox} ${
+            props.isHalfWidth && style.halfWidthBox
+          }`}
+        >
+          <p className={style.descriptionBox__text}>{props.children}</p>
         </div>
       )}
     </article>

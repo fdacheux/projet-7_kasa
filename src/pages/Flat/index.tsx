@@ -11,6 +11,7 @@ import useFindFlat from "../../utils/hooks/find-flat.hook";
 import { toKey } from "../../utils/toKey.util";
 
 import style from "./Flat.module.scss";
+import Carousel from "./Components/Caroussel";
 
 const Flat = () => {
   let { id } = useParams();
@@ -28,20 +29,19 @@ const Flat = () => {
         <Loader />
       ) : !error && flat ? (
         <article className={style.flatContent}>
-          <img
-            src={flat.cover}
-            alt=""
-            style={{ height: "125px", width: "125px" }}
-          />
-          <header className={style.descriptionHeader}>
-            <h1 className={style.title}>{flat.title}</h1>
-            <h2 className={style.subtitle}>{flat.location}</h2>
-            <Tags tags={flat.tags} />
-          </header>
-          <aside className={style.descriptionAside}>
-            <Ratings stars={flat.rating} />
-            <Host host={flat.host} />
-          </aside>
+          <Carousel src={flat.cover} alt={flat.title} />
+          <section className={style.descriptionHeaderBox}>
+            <header className={style.descriptionHeader}>
+              <h1 className={style.title}>{flat.title}</h1>
+              <h2 className={style.subtitle}>{flat.location}</h2>
+              <Tags tags={flat.tags} />
+            </header>
+            <aside className={style.descriptionAside}>
+              <Ratings stars={flat.rating} />
+              <Host host={flat.host} />
+            </aside>
+          </section>
+
           <section
             className={style.descriptionContent}
             aria-label="Description et équipements de l'appartement."
@@ -53,7 +53,12 @@ const Flat = () => {
               {
                 <ul>
                   {flat.equipments.map((element) => (
-                    <li key={`tag-${toKey(element)}`}>{element}</li>
+                    <li
+                      key={`tag-${toKey(element)}`}
+                      className={style.equipmentsList}
+                    >
+                      {element}
+                    </li>
                   ))}
                 </ul>
               }

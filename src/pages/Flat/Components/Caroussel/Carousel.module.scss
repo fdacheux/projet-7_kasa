@@ -1,0 +1,18 @@
+@import "../../../../style/utils/mixins.scss";
+@import "../../../../style/utils/functions.scss";
+
+.carouselContainer {
+  height: 255px;
+  width: 100;
+  @include medium-large-screens {
+    height: 415px;
+  }
+}
+
+.carouselPhotos {
+    object-fit: cover; 
+    object-position: center;
+    border-radius: get-radius('large');
+    height: 100%;
+    width: 100%;
+}

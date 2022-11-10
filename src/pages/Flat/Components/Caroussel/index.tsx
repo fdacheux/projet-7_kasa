@@ -1,9 +1,9 @@
 import style from './Carousel.module.scss'
 
-const Carousel = () => {
+const Carousel = ({ src , alt }: any) => {
   return (
     <div className={style.carouselContainer}>
-      Carousel
+      <img src={src} alt={alt} className={style.carouselPhotos} />
     </div>
   )
 }
