@@ -1,8 +1,8 @@
-// import style from './Carousel.module.scss'
+import style from './Carousel.module.scss'
 
 const Carousel = () => {
   return (
-    <div>
+    <div className={style.carouselContainer}>
       Carousel
     </div>
   )

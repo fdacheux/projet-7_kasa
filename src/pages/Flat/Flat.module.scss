@@ -1,14 +1,22 @@
-@import '../../style/utils/mixins.scss';
+@import "../../style/utils/mixins.scss";
 
 .title {
-    font-weight: 500;
+  font-weight: 500;
+  font-size: 1.6em;
+  line-height: 1.2em;
+  @include medium-large-screens {
+    font-size: 2.3em;
+  }
+}
+
+.subtitle {
+  font-weight: 500;
+  font-size: 1.1em;
+  @include medium-large-screens{
     font-size: 1.3em;
-    line-height: 1.2em;
-    @include medium-large-screens{
-        font-size: 2.3em;
-    }
+  }
 }
 
 .location {
-    font-weight: 500;
+  font-weight: 500;
 }
