@@ -1,7 +1,7 @@
-import Card from "../Card";
+import Card from "../../../../components/Card";
 import style from "./Gallery.module.scss";
-import { useFindFlats } from "../../utils/hooks/find-flats.hook";
-import Loader from "../Loader";
+import { useFindFlats } from "../../../../utils/hooks/find-flats.hook";
+import Loader from "../../../../components/Loader";
 import { Link } from "react-router-dom";
 
 function Gallery() {

@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import Collapse from "../../components/Collapse";
 import Loader from "../../components/Loader";
 import Ratings from "./Components/Ratings";
-import Tags from "../../components/Tags";
+import Tags from "./Components/Tags";
 import Host from "./Components/Host";
 
 import useFindFlat from "../../utils/hooks/find-flat.hook";
