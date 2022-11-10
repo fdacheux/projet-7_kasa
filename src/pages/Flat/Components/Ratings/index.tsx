@@ -1,5 +1,5 @@
-import FullStar from "../../assets/images/full-star.svg";
-import EmptyStar from "../../assets/images/empty-star.svg";
+import FullStar from "../../../../assets/images/full-star.svg";
+import EmptyStar from "../../../../assets/images/empty-star.svg";
 
 interface Iratings {
   stars: string

@@ -3,6 +3,13 @@
 
 .accordion {
   min-width: 100%;
+  @include medium-large-screens {
+    &.accordionHalfWidth {
+      min-width: 47%;
+      max-width: 47%;
+      margin-bottom: 2em;
+    }
+  }
 }
 
 .headerButton {
@@ -31,22 +38,22 @@
 }
 
 @keyframes rotate-chevron-down {
-    0% {
-              transform: rotate(180deg);
-    }
-    100% {
-              transform: rotate(0deg);
-    }
+  0% {
+    transform: rotate(180deg);
   }
+  100% {
+    transform: rotate(0deg);
+  }
+}
 
 @keyframes rotate-chevron-up {
-    0% {
-              transform: rotate(0deg);
-    }
-    100% {
-              transform: rotate(180deg);
-    }
+  0% {
+    transform: rotate(0deg);
   }
+  100% {
+    transform: rotate(180deg);
+  }
+}
 
 .descriptionBox {
   border-radius: 5px;
@@ -59,5 +66,8 @@
       font-size: 1.3em;
       line-height: 32px;
     }
+  }
+  &.halfWidthBox {
+    height: 100%;
   }
 }

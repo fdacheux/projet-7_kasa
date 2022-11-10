@@ -27,7 +27,7 @@ const Flat = () => {
       {isLoading ? (
         <Loader />
       ) : !error && flat ? (
-        <article>
+        <article className={style.flatContent}>
           <img
             src={flat.cover}
             alt=""
@@ -46,10 +46,10 @@ const Flat = () => {
             className={style.descriptionContent}
             aria-label="Description et équipements de l'appartement."
           >
-            <Collapse id={flat.id} title="Description">
+            <Collapse id={flat.id} title="Description" isHalfWidth={true}>
               {flat.description}
             </Collapse>
-            <Collapse id={flat.id} title="Équipements">
+            <Collapse id={flat.id} title="Équipements" isHalfWidth={true}>
               {
                 <ul>
                   {flat.equipments.map((element) => (
