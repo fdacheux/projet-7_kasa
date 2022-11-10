@@ -1,12 +1,16 @@
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
+
+import Collapse from "../../components/Collapse";
 import Loader from "../../components/Loader";
-import useFindFlat from "../../utils/hooks/find-flat.hook";
 import Ratings from "../../components/Ratings";
 import Tags from "../../components/Tags";
-import { useParams } from "react-router-dom";
-import { useEffect } from "react";
-import style from "./Flat.module.scss";
-import Collapse from "../../components/Collapse";
 import Host from "./Components/Host";
+
+import useFindFlat from "../../utils/hooks/find-flat.hook";
+import { toKey } from "../../utils/toKey.util"
+
+import style from "./Flat.module.scss";
 
 const Flat = () => {
   let { id } = useParams();
@@ -41,7 +45,7 @@ const Flat = () => {
             {
               <ul>
                 {flat.equipments.map((element) => (
-                  <li key={`tag-${element}`}>{element}</li>
+                  <li key={`tag-${toKey(element)}`}>{element}</li>
                 ))}
               </ul>
             }
