@@ -12,6 +12,9 @@
   flex-direction: column;
   width: 100%;
   justify-content: space-between;
+  @include medium-large-screens{
+    flex-direction: row;
+  }
 }
 
 .title {

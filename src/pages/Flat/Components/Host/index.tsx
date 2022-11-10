@@ -4,8 +4,8 @@ const Host = ({ host }: any) => {
   const hostData = { ...host };
   console.log(hostData);
   return (
-    <div>
-      <div>{hostData.name}</div>
+    <div className={style.hostContainer}>
+      <div className={style.hostName}>{hostData.name}</div>
       <img src={hostData.picture} alt={hostData.name} className={style.avatar} />
     </div>
   );

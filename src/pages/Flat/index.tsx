@@ -30,7 +30,10 @@ const Flat = () => {
       ) : !error && flat ? (
         <article className={style.flatContent}>
           <Carousel src={flat.cover} alt={flat.title} />
-          <section className={style.descriptionHeaderBox}>
+          <section
+            className={style.descriptionHeaderBox}
+            aria-label={`${flat.title} : informations principales`}
+          >
             <header className={style.descriptionHeader}>
               <h1 className={style.title}>{flat.title}</h1>
               <h2 className={style.subtitle}>{flat.location}</h2>

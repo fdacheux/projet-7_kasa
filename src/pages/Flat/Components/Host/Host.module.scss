@@ -1,6 +1,21 @@
 
 @import '../../../../style/utils/mixins.scss';
 
+.hostContainer {
+    display: flex;
+    align-items: center;
+    align-self: flex-end;
+}
+
+.hostName {
+    font-size: 0.9em;
+    width: min-content;
+    margin-right: 5px;
+    @include medium-large-screens {
+        font-size: 1em;
+    }
+}
+
 .avatar{
     border-radius: 50%;
     @include sizing-element(32px, 32px);

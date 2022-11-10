@@ -2,18 +2,29 @@
 
 @mixin border-radius {
   border-radius: 10px;
-  @include medium-large-screens{
+  @include medium-large-screens {
     border-radius: 25px;
   }
 }
 
-@mixin sizing-element($height, $width){
+@mixin rating-stars-style {
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+  @include medium-large-screens {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+  }
+}
+
+@mixin sizing-element($height, $width) {
   height: $height;
   width: $width;
 }
 
 @mixin hundred-percent-sizing {
-  @include sizing-element(100%, 100%)
+  @include sizing-element(100%, 100%);
 }
 
 @mixin linearGradient-transparent-mask {
@@ -42,7 +53,7 @@
   }
 }
 
-// Responsive : 
+// Responsive :
 
 @mixin xsmall-screens {
   @media screen and (max-width: map-get($max-width, xsmall)) {
