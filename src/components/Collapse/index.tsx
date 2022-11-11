@@ -1,16 +1,12 @@
 import style from "./Collapse.module.scss";
 import UpChevron from "../../assets/images/up-arrow.svg";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import IProps from "../../models/about.model";
 
 const Collapse = (props: IProps) => {
   const [isCollapsed, setCollapse] = useState(false);
 
   const changeCollapse = () => setCollapse(!isCollapsed);
-  // useEffect(() => {
-  //   console.log(isCollapsed);
-  // }, [isCollapsed]);
-
   return (
     <article
       className={`${style.accordion} ${

@@ -1,4 +1,3 @@
-// import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 import Loader from "../../components/Loader";
@@ -16,9 +15,6 @@ const Flat = () => {
   const { data, isLoading, error } = useFindFlat(id || "");
   let flat = data ? { ...data[0] } : undefined;
 
-  // useEffect(() => {
-  //   console.log(isLoading);
-  // }, [isLoading]);
 
   return (
     <main>

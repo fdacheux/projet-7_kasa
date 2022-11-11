@@ -17,7 +17,7 @@ const DescriptionHeader = ({ title, location, tags, rating, host } : IFlat) => {
       </header>
       <aside className={style.descriptionAside}>
         <Ratings stars={rating} />
-        <Host host={host} />
+        <Host {...host} />
       </aside>
     </section>
   );
