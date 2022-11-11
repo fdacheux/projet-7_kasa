@@ -11,7 +11,11 @@
   width: 20px;
   height: 20px;
   margin-left: 5px;
-  @include medium-large-screens {
+  @include medium-screens{
+    width: 25px;
+    height: 25px;
+  }
+  @include large-screens {
     width: 30px;
     height: 30px;
     margin-left: 10px;

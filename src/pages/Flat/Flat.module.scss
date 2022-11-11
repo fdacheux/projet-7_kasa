@@ -5,6 +5,10 @@
   flex-direction: column;
   align-content: space-between;
   height: 90%;
+  row-gap: 20px;
+  @include medium-large-screens {
+    row-gap: 32px;
+  }
 }
 
 .descriptionHeaderBox {
@@ -12,8 +16,21 @@
   flex-direction: column;
   width: 100%;
   justify-content: space-between;
-  @include medium-large-screens{
+  row-gap: 20px;
+  @include medium-large-screens {
     flex-direction: row;
+  }
+}
+
+.descriptionHeader {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  @include medium-screens {
+    padding-right: 2.7em;
+  }
+  @include large-screens {
+    max-width: 70%;
   }
 }
 
@@ -21,7 +38,7 @@
   font-weight: 500;
   font-size: 1.6em;
   line-height: 1.2em;
-  @include medium-large-screens {
+  @include large-screens {
     font-size: 2.3em;
   }
 }
@@ -29,15 +46,27 @@
 .subtitle {
   font-weight: 500;
   font-size: 1.1em;
-  @include medium-large-screens {
+  @include large-screens {
     font-size: 1.3em;
   }
 }
 
 .descriptionAside {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: fit-content;
+  @include medium-screens {
+    min-width: fit-content;
+  }
   @include medium-large-screens {
     flex-direction: column-reverse;
+    gap: 10px;
+  }
+  @include large-screens {
+    
+    // align-items: flex-end;
+    justify-content: center;
   }
 }
 
@@ -51,7 +80,7 @@
   justify-content: space-between;
   width: 100%;
   row-gap: 20px;
-  @include medium-large-screens {
+  @include large-screens {
     flex-direction: row;
   }
 }

@@ -11,16 +11,23 @@
     font-size: 0.9em;
     width: min-content;
     margin-right: 5px;
-    @include medium-large-screens {
-        font-size: 1em;
+    @include medium-screens{
+        font-size: 1.2em;
+        height: 100%;
+    }
+    @include large-screens {
+        font-size: 1.3em;
     }
 }
 
 .avatar{
     border-radius: 50%;
     @include sizing-element(32px, 32px);
-    @include medium-large-screens{
-        @include sizing-element(64px, 64px);
+    @include medium-screens{
+        @include sizing-element(64px, 64px)
+    }
+    @include large-screens{
+        @include sizing-element(110px, 110px);
     }
 
 }
