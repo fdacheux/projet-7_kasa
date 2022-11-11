@@ -1,6 +1,6 @@
 import Banner from "../../components/Banner";
-import Gallery from "../../components/Gallery";
-import bannerHome from "../../assets/images/home-banner-img.webp"
+import Gallery from "./Components/Gallery";
+import bannerHome from "../../assets/images/home-banner-img.webp";
 
 const title = `Chez vous, partout et ailleurs`;
 

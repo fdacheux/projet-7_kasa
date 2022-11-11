@@ -1,0 +1,6 @@
+@import '../../../../style/utils/mixins.scss';
+
+
+.ratingContainer>img{
+    @include rating-stars-style;
+}

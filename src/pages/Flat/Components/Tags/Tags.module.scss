@@ -1,5 +1,5 @@
-@import '../../style/utils/mixins.scss';
-@import '../../style/utils/functions.scss';
+@import '../../../../style/utils/mixins.scss';
+@import '../../../../style/utils/functions.scss';
 
 .tagsContainer {
     display: flex;
@@ -16,7 +16,7 @@
     text-align: center;
     line-height: 25px;
     font-size: 16px;
-    @include medium-large-screens{
+    @include large-screens{
         font-size: 18px;
         width: 175px;
         height: 31px;
