@@ -2,7 +2,6 @@ import style from './Host.module.scss'
 
 const Host = ({ host }: any) => {
   const hostData = { ...host };
-  console.log(hostData);
   return (
     <div className={style.hostContainer}>
       <div className={style.hostName}>{hostData.name}</div>

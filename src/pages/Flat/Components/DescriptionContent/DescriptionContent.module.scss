@@ -1,0 +1,22 @@
+@import "../../../../style/utils/mixins.scss";
+
+.descriptionContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    row-gap: 20px;
+    @include large-screens {
+      flex-direction: row;
+    }
+  }
+  
+  .equipmentsList {
+    font-size: 1.1em;
+    line-height: 24px;
+    @include medium-large-screens {
+      font-size: 1.3em;
+      line-height: 32px;
+    }
+  }
+  
