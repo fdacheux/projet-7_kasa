@@ -4,6 +4,7 @@
 .carouselContainer {
   height: 255px;
   width: 100;
+  overflow: hidden;
   @include medium-large-screens {
     height: 415px;
   }
