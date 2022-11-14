@@ -1,18 +1,17 @@
 import style from "./Collapse.module.scss";
 import UpChevron from "../../assets/images/up-arrow.svg";
 import { useState } from "react";
-import IProps from "../../models/about.model";
+import IAboutData from "../../models/about.model";
 
-const Collapse = (props: IProps) => {
+const Collapse = (props: IAboutData) => {
   const [isCollapsed, setCollapse] = useState(false);
 
   const changeCollapse = () => setCollapse(!isCollapsed);
   return (
     <article
-      className={`${style.accordion} ${
-        props.isHalfWidth && style.accordionHalfWidth
+      className={`${style.accordion}${
+        props.isHalfWidth ? ` ${style.accordionHalfWidth}` : ""
       }`}
-      key={props.id}
     >
       <button
         onClick={changeCollapse}
@@ -36,7 +35,7 @@ const Collapse = (props: IProps) => {
             props.isHalfWidth && style.halfWidthBox
           }`}
         >
-          <p className={style.descriptionBox__text}>{props.children}</p>
+          {props.children}
         </div>
       )}
     </article>

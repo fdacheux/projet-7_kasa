@@ -11,7 +11,7 @@
   width: 20px;
   height: 20px;
   margin-left: 5px;
-  @include medium-screens{
+  @include medium-screens {
     width: 25px;
     height: 25px;
   }
@@ -54,6 +54,15 @@
   } @else {
     background-color: $colour-primary;
     color: $colour-secondary;
+  }
+}
+
+@mixin descriptionText {
+  font-size: 1.1em;
+  line-height: 24px;
+  @include medium-large-screens {
+    font-size: 1.3em;
+    line-height: 32px;
   }
 }
 

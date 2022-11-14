@@ -10,4 +10,7 @@
     @include medium-screens{
         margin-top: 1em;
     }
+    &__text{
+        @include descriptionText;
+    }
 }

@@ -59,14 +59,7 @@
   border-radius: 5px;
   background-color: $colour-tertiary;
   padding: 1.1em;
-  &__text {
-    font-size: 1.1em;
-    line-height: 24px;
-    @include medium-large-screens {
-      font-size: 1.3em;
-      line-height: 32px;
-    }
-  }
+
   @include large-screens {
     &.halfWidthBox {
       height: 100%;
