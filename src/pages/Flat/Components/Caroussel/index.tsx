@@ -1,9 +1,10 @@
+import { IFlat } from '../../../../models/flat.model'
 import style from './Carousel.module.scss'
 
-const Carousel = ({ src , alt }: any) => {
+const Carousel = ({ cover , title }: IFlat) => {
   return (
     <div className={style.carouselContainer}>
-      <img src={src} alt={alt} className={style.carouselPhotos} />
+      <img src={cover} alt={title} className={style.carouselPhotos} />
     </div>
   )
 }
