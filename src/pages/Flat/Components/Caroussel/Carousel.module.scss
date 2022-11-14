@@ -1,19 +1,79 @@
+@import "../../../../style/utils/variables.scss";
 @import "../../../../style/utils/mixins.scss";
 @import "../../../../style/utils/functions.scss";
 
 .carouselContainer {
-  height: 255px;
+  position: relative;
+  min-height: 255px;
+  max-height: 255px;
   width: 100;
   overflow: hidden;
   @include medium-large-screens {
-    height: 415px;
+    min-height: 415px;
+    max-height: 415px;
+  }
+  &__controls {
+    z-index: 2;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    left: 0%;
+    padding-right: 2em;
+    padding-left: 2em;
+  }
+  &__rightChevron,
+  &__leftChevron {
+    background-color: transparent;
+    border: none;
+  }
+  &__imagesProgression {
+    z-index: 2;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    bottom: 24px;
+    right: 0;
+    color: $colour-secondary;
+    & > p {
+      align-self: center;
+      border-radius: 5px;
+      width: fit-content;
+      background-color: rgba(0, 0, 0, 0.158);
+      padding: 5px 15px;
+      font-size: 16px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.705);
+      @include medium-large-screens {
+        font-size: 24px;
+      }
+    }
   }
 }
 
 .carouselPhotos {
-    object-fit: cover; 
-    object-position: center;
-    border-radius: get-radius('large');
-    height: 100%;
-    width: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: get-radius("large");
+  height: 100%;
+  width: 100%;
+}
+
+.chevrons {
+  cursor: pointer;
+  height: 45px;
+  @include medium-large-screens {
+    height: 80px;
+  }
+}
+
+.rightChevron {
+  @include chevronShadow(true);
+}
+
+.leftChevron {
+  @include chevronShadow(false);
 }
