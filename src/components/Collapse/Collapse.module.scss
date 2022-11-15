@@ -59,10 +59,24 @@
   border-radius: 5px;
   background-color: $colour-tertiary;
   padding: 1.1em;
+  transform-origin: top ;
+  animation: appearing-box 0.3s ease-in-out forwards;
 
   @include large-screens {
     &.halfWidthBox {
       height: 100%;
     }
+  }
+}
+
+@keyframes appearing-box {
+  
+  from{
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  to{
+    transform: scaleY(1);
+    opacity: 1;
   }
 }
