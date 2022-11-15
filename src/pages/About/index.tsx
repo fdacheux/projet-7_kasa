@@ -5,9 +5,10 @@ import style from "./About.module.scss";
 import aboutData from "./About.data.json";
 
 function About() {
+  const title = "Nos valeurs ..."
   return (
     <main>
-      <Banner isHomepage={false} hasTitle={false} imgUrl={bannerAbout} />
+      <Banner isHomepage={false} hasTitle={true} imgUrl={bannerAbout} title={title} />
       <section className={style.aboutSection}>
         {aboutData.map((element) => (
           <Collapse
