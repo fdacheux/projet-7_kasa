@@ -13,7 +13,7 @@ function Navbar() {
   return (
     <nav>
       <ul className={style.navbar}>
-        <li>
+        <li className={style.navbar__listElement}>
           <NavLink
             to="/"
             className={({ isActive }) => defineClassName(isActive)}
@@ -21,7 +21,7 @@ function Navbar() {
             Accueil
           </NavLink>
         </li>
-        <li className={style.navbar__aboutLink}>
+        <li className={`${style.navbar__aboutLink} ${style.navbar__listElement}`}>
           <NavLink
             to="/about"
             className={({ isActive }) => defineClassName(isActive)}

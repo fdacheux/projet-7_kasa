@@ -1,24 +1,11 @@
 @import "./variables.scss";
 
+//global style mixins
+
 @mixin border-radius {
   border-radius: 10px;
   @include medium-large-screens {
     border-radius: 25px;
-  }
-}
-
-@mixin rating-stars-style {
-  width: 20px;
-  height: 20px;
-  margin-left: 5px;
-  @include medium-screens {
-    width: 25px;
-    height: 25px;
-  }
-  @include large-screens {
-    width: 30px;
-    height: 30px;
-    margin-left: 10px;
   }
 }
 
@@ -29,6 +16,16 @@
 
 @mixin hundred-percent-sizing {
   @include sizing-element(100%, 100%);
+}
+
+@mixin is-light-background($light-background: true) {
+  @if $light-background {
+    background-color: $colour-secondary;
+    color: $colour-primary;
+  } @else {
+    background-color: $colour-primary;
+    color: $colour-secondary;
+  }
 }
 
 @mixin linearGradient-transparent-mask {
@@ -47,13 +44,20 @@
   content: "";
 }
 
-@mixin is-light-background($light-background: true) {
-  @if $light-background {
-    background-color: $colour-secondary;
-    color: $colour-primary;
-  } @else {
-    background-color: $colour-primary;
-    color: $colour-secondary;
+// style for components
+
+@mixin rating-stars-style {
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+  @include medium-screens {
+    width: 25px;
+    height: 25px;
+  }
+  @include large-screens {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
   }
 }
 
@@ -76,6 +80,17 @@
     filter: drop-shadow(($offset-x * 2) 5px 6px rgba(0, 0, 0, 0.884));
   }
 }
+
+@mixin hidden-covering-element ($content){
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  content: $content ;
+}
+
 
 // Responsive :
 
