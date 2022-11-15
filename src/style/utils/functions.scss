@@ -15,3 +15,8 @@
     @return 0;
   }
 }
+
+
+@function offset-x($value, $isRight) {
+  @return $value*(-1);
+}

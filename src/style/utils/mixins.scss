@@ -66,6 +66,17 @@
   }
 }
 
+@mixin chevronShadow($isRight) {
+  $offset-x: 5px;
+  @if $isRight == true {
+    $offset-x: -5px;
+  }
+  filter: drop-shadow($offset-x 4px 3px rgba(0, 0, 0, 0.884));
+  @include medium-large-screens {
+    filter: drop-shadow(($offset-x * 2) 5px 6px rgba(0, 0, 0, 0.884));
+  }
+}
+
 // Responsive :
 
 @mixin xsmall-screens {
