@@ -5,8 +5,9 @@ import IAboutData from "../../models/about.model";
 
 const Collapse = (props: IAboutData) => {
   const [isCollapsed, setCollapse] = useState(false);
+  const [isActive, setActive] = useState(false);
 
-  const changeCollapse = () => setCollapse(!isCollapsed);
+  const changeCollapse = () => { !isActive && setCollapse(true); setActive(!isActive)};
   return (
     <article
       className={`${style.accordion}${
@@ -23,7 +24,7 @@ const Collapse = (props: IAboutData) => {
           src={UpChevron}
           alt="contenu visible"
           className={
-            isCollapsed
+            isActive
               ? style.headerButton__chevron
               : style.headerButton__chevronActive
           }
@@ -31,9 +32,10 @@ const Collapse = (props: IAboutData) => {
       </button>
       {isCollapsed && (
         <div
+          onAnimationEnd={() => { !isActive && setCollapse(false) } }
           className={`${style.descriptionBox} ${
             props.isHalfWidth && style.halfWidthBox
-          }`}
+          } ${isActive? style.activeBox : style.unactiveBox}`}
         >
           {props.children}
         </div>
