@@ -1,12 +1,21 @@
+@import "../../../../style/utils/mixins.scss";
+
 .paginationContainer {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  row-gap: 24px;
+  @include large-screens {
+    flex-direction: row;
+  }
 }
 
 .total {
-  font-size: 1.2em;
+  @include large-screens {
+    font-size: 1.2em;
+  }
 }
 
 .paginationButtons {
@@ -15,6 +24,9 @@
   margin: 0 1em;
   cursor: pointer;
   &__icon {
+    height: 1.8em;
+    @include large-screens {
     height: 2em;
+    }
   }
 }
