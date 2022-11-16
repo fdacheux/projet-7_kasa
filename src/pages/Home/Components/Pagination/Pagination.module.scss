@@ -8,9 +8,15 @@
   align-items: center;
   width: 100%;
   row-gap: 24px;
-  @include large-screens {
-    flex-direction: row;
+  @media screen and (min-width: 992px) and (max-width: 1200px) {
+    flex-direction: column;
   }
+
+  @media screen and (min-width: 1201px){
+
+      flex-direction: row;
+  } 
+  
 }
 
 .total {
@@ -27,51 +33,70 @@
   &__icon {
     height: 1.8em;
     @include large-screens {
-    height: 2em;
+      height: 2em;
     }
   }
 }
 
 .buttonsContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap-reverse;
+  @include large-screens {
+    flex-wrap: nowrap;
+  }
 }
 
-.pageNumber{
-    display: flex;
-    gap: 10px;
-    margin: 0 30px;
-    &__button{
-        cursor: pointer;
-        border: none;
-        background-color: transparent;
-        padding: 10px;
-        font-size: 1.5em;
-        color: $colour-primary;
-        text-decoration: underline;
+.pageNumber {
+  display: flex;
+  gap: 10px;
+  margin: 0 30px;
+  order: -1;
+  width: 100%;
+  justify-content: center;
+  @include large-screens {
+    margin: 0 10px;
+    order: 0;
+    width: auto;
+  }
+  &__button {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    padding: 10px;
+    font-size: 1.5em;
+    color: $colour-primary;
+    text-decoration: underline;
+    &:disabled {
+      cursor: unset;
+      color: #804745;
+      text-decoration: none;
     }
+  }
 }
 
 .selectLimit {
-    margin-bottom: 40px;
-    margin-left: 12px;
-    height : 2em;
-    border-radius: 5px;
-    border: $colour-primary solid 3px;
-    background-color: $colour-primary;
+  margin-bottom: 40px;
+  margin-left: 12px;
+  height: 2em;
+  border-radius: 5px;
+  border: $colour-primary solid 3px;
+  background-color: $colour-primary;
+  color: $colour-secondary;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.247);
+  font-size: 1.3em;
+
+  & > * {
+    font-size: 1.3em;
     color: $colour-secondary;
-    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.247);
-    font-size: 1.3em;;
-    &>*{
-        font-size: 1.3em;
-        color: $colour-secondary;
-    }
-    &:checked{
-        color: $colour-primary;
-    }
-    @include medium-large-screens{
-        margin-bottom: 0;
-        font-size: 1em;
-    }
+  }
+  &:checked {
+    color: $colour-primary;
+  }
+  @include medium-large-screens {
+    margin-bottom: 0;
+    font-size: 1em;
+  }
 }

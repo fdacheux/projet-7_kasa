@@ -2,7 +2,6 @@ import { useFindFlats } from "../../../../utils/hooks/find-flats.hook";
 import style from "./Pagination.module.scss";
 import LeftChevron from "../../../../assets/images/left-arrow-primarycolour.svg";
 import RightChevron from "../../../../assets/images/right-arrow-primarycolour.svg";
-import { useState } from "react";
 
 interface PaginationProps {
   previous: () => void;
@@ -37,7 +36,7 @@ const Pagination = ({
       </span>
       <div className={style.buttonsContainer}>
         {page > 1 && (
-          <>
+          <div className={style.backward}>
             <button
               onClick={() => firstPage()}
               className={style.paginationButtons}
@@ -64,7 +63,7 @@ const Pagination = ({
                 className={style.paginationButtons__icon}
               />
             </button>
-          </>
+          </div>
         )}
         <div className={style.pageNumber}>
           {[...Array(pageNumber)].map((x, number) => (
@@ -80,7 +79,7 @@ const Pagination = ({
         </div>
 
         {page < pageNumber && (
-          <>
+          <div className={style.forward}>
             <button onClick={() => next()} className={style.paginationButtons}>
               <img
                 src={RightChevron}
@@ -103,7 +102,7 @@ const Pagination = ({
                 className={style.paginationButtons__icon}
               />
             </button>
-          </>
+          </div>
         )}
       </div>
       <div className={style.paginationOptions}>
@@ -112,10 +111,11 @@ const Pagination = ({
           name="limite"
           id="limit"
           className={style.selectLimit}
-          onChange={(e: any) => setLimit(parseInt(e?.target?.value))}
+                  onChange={(e: any) => setLimit(parseInt(e?.target?.value))}
+                  defaultValue={limit}
         >
-          <option value="6">6</option>
-          <option value="12" selected>
+          <option value="6" >6</option>
+          <option value="12" >
             12
           </option>
           <option value="24">24</option>
