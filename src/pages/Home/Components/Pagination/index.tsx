@@ -27,7 +27,7 @@ const Pagination = ({
 
   return (
     <div className={style.paginationContainer}>
-      <span className={style.total}>Appartements : {size}</span>
+          <span className={style.total}>Appartements : {limit * page} / {size}</span>
       <div className={style.buttonsContainer}>
         {page > 1 && (
           <>
@@ -94,9 +94,8 @@ const Pagination = ({
           className={style.selectLimit}
           onChange={(e: any) => setLimit(parseInt(e?.target?.value))}
         >
-          <option value={limit}>---</option>
           <option value="6">6</option>
-          <option value="12">12</option>
+          <option value="12"selected >12</option>
           <option value="24">24</option>
         </select>
       </div>
