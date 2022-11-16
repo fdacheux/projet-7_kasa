@@ -32,6 +32,27 @@
   }
 }
 
+.buttonsContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pageNumber{
+    display: flex;
+    gap: 10px;
+    margin: 0 30px;
+    &__button{
+        cursor: pointer;
+        border: none;
+        background-color: transparent;
+        padding: 10px;
+        font-size: 1.5em;
+        color: $colour-primary;
+        text-decoration: underline;
+    }
+}
+
 .selectLimit {
     margin-bottom: 40px;
     margin-left: 12px;

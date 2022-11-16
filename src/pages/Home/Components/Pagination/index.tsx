@@ -2,12 +2,14 @@ import { useFindFlats } from "../../../../utils/hooks/find-flats.hook";
 import style from "./Pagination.module.scss";
 import LeftChevron from "../../../../assets/images/left-arrow-primarycolour.svg";
 import RightChevron from "../../../../assets/images/right-arrow-primarycolour.svg";
+import { useState } from "react";
 
 interface PaginationProps {
   previous: () => void;
   next: () => void;
   firstPage: () => void;
   lastPage: () => void;
+  goToPage: (number: number) => void;
   setLimit: React.Dispatch<React.SetStateAction<number>>;
   limit: number;
   page: number;
@@ -18,16 +20,21 @@ const Pagination = ({
   next,
   firstPage,
   lastPage,
+  goToPage,
   setLimit,
   limit,
   page,
 }: PaginationProps) => {
   console.log(page);
   const { size } = useFindFlats();
+  const pageNumber = Math.ceil(size / limit);
+
 
   return (
     <div className={style.paginationContainer}>
-          <span className={style.total}>Appartements : {limit * page} / {size}</span>
+      <span className={style.total}>
+        Appartements : {limit * page <= size ? limit * page : size} / {size}
+      </span>
       <div className={style.buttonsContainer}>
         {page > 1 && (
           <>
@@ -59,7 +66,20 @@ const Pagination = ({
             </button>
           </>
         )}
-        {page < size / limit && (
+        <div className={style.pageNumber}>
+          {[...Array(pageNumber)].map((x, number) => (
+            <button
+              key={`pagination-page${number + 1}of${pageNumber}`}
+              className={style.pageNumber__button}
+                  onClick={() => goToPage(number + 1)}
+                  disabled={page === number+1}
+            >
+              {number + 1}
+            </button>
+          ))}
+        </div>
+
+        {page < pageNumber && (
           <>
             <button onClick={() => next()} className={style.paginationButtons}>
               <img
@@ -95,7 +115,9 @@ const Pagination = ({
           onChange={(e: any) => setLimit(parseInt(e?.target?.value))}
         >
           <option value="6">6</option>
-          <option value="12"selected >12</option>
+          <option value="12" selected>
+            12
+          </option>
           <option value="24">24</option>
         </select>
       </div>

@@ -59,14 +59,26 @@
   border-radius: 5px;
   background-color: $colour-tertiary;
   padding: 1.1em;
-  transform-origin: top ;
-  animation: appearing-box 0.3s ease-in-out forwards;
+
+  // transform-origin: top ;
+  // animation: appearing-box 0.3s ease-in-out forwards;
 
   @include large-screens {
     &.halfWidthBox {
       height: 100%;
     }
   }
+}
+
+.activeBox {
+  transform-origin: top ;
+  animation: appearing-box 0.3s ease-in-out forwards;
+
+}
+
+.unactiveBox{
+  transform-origin: top;
+  animation: disappearing-box 0.3s ease-in-out forwards;
 }
 
 @keyframes appearing-box {
@@ -78,5 +90,17 @@
   to{
     transform: scaleY(1);
     opacity: 1;
+  }
+}
+
+@keyframes disappearing-box {
+  
+  from{
+    transform: scaleY(1);
+    opacity: 1;
+  }
+  to{
+    transform: scaleY(0);
+    opacity: 0;
   }
 }

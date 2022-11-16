@@ -31,6 +31,14 @@ function Gallery() {
     setPage(Math.ceil(size / limit));
   }, [fetch, size, limit]);
 
+  const goToPage = useCallback(
+    (pageNumber: number) => {
+      fetch((pageNumber - 1) * limit, limit);
+      setPage(pageNumber);
+    },
+    [fetch, limit]
+  );
+
   useEffect(() => {
     fetch(0, limit);
     setPage(1);
@@ -57,6 +65,7 @@ function Gallery() {
             next={next}
             firstPage={firstPage}
             lastPage={lastPage}
+            goToPage={goToPage}
             setLimit={setLimit}
             limit={limit}
             page={page}
