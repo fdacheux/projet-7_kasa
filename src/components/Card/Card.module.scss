@@ -1,0 +1,67 @@
+@import "../../style/utils/mixins.scss";
+@import "../../style/utils/variables.scss";
+
+.card {
+  position: relative;
+  overflow: hidden;
+  @include border-radius;
+  margin: 10px 20px;
+  max-height: 300px;
+  max-width: 500px;
+  width: 100%;
+  transition: all 250ms ease-in;
+
+  &:before{
+    z-index: 3;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.534);
+    color: rgb(255, 255, 255);
+    font-size: 120%;
+    font-weight: 700;
+    content: 'Voir plus';
+  }
+  &:hover {
+    transform: scale(0.97);
+    &:before{
+      opacity: 1;
+    }
+  }
+}
+
+.imgBox {
+  overflow: hidden;
+  display: flex;
+  @include border-radius;
+
+  @include hundred-percent-sizing;
+  &:before {
+    @include linearGradient-transparent-mask;
+  }
+}
+
+.temporaryImg {
+  object-fit: cover;
+  @include hundred-percent-sizing;
+}
+
+.title {
+  z-index: 2;
+  position: absolute;
+  display: flex;
+  align-items: flex-end;
+  line-height: 142%;
+  bottom: 20px;
+  left: 20px;
+  margin-right: 20px;
+  color: white;
+  font-weight: 500;
+  font-size: 18px;
+}

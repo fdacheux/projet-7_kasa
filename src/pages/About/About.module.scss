@@ -1,0 +1,16 @@
+@import '../../style/utils/mixins.scss';
+
+.aboutSection {
+    max-width: 1023px;
+    width: 100%;
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    gap: 1.8em;
+    @include medium-screens{
+        margin-top: 1em;
+    }
+    &__text{
+        @include descriptionText;
+    }
+}

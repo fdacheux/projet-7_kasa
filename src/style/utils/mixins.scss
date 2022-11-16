@@ -1,0 +1,125 @@
+@import "./variables.scss";
+
+//global style mixins
+
+@mixin border-radius {
+  border-radius: 10px;
+  @include medium-large-screens {
+    border-radius: 25px;
+  }
+}
+
+@mixin sizing-element($height, $width) {
+  height: $height;
+  width: $width;
+}
+
+@mixin hundred-percent-sizing {
+  @include sizing-element(100%, 100%);
+}
+
+@mixin is-light-background($light-background: true) {
+  @if $light-background {
+    background-color: $colour-secondary;
+    color: $colour-primary;
+  } @else {
+    background-color: $colour-primary;
+    color: $colour-secondary;
+  }
+}
+
+@mixin linearGradient-transparent-mask {
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  opacity: 1;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+  content: "";
+}
+
+// style for components
+
+@mixin rating-stars-style {
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+  @include medium-screens {
+    width: 25px;
+    height: 25px;
+  }
+  @include large-screens {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+  }
+}
+
+@mixin descriptionText {
+  font-size: 1.1em;
+  line-height: 24px;
+  @include medium-large-screens {
+    font-size: 1.3em;
+    line-height: 32px;
+  }
+}
+
+@mixin chevronShadow($isRight) {
+  $offset-x: 5px;
+  @if $isRight == true {
+    $offset-x: -5px;
+  }
+  filter: drop-shadow($offset-x 4px 3px rgba(0, 0, 0, 0.884));
+  @include medium-large-screens {
+    filter: drop-shadow(($offset-x * 2) 5px 6px rgba(0, 0, 0, 0.884));
+  }
+}
+
+@mixin hidden-covering-element ($content){
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  content: $content ;
+}
+
+
+// Responsive :
+
+@mixin xsmall-screens {
+  @media screen and (max-width: map-get($max-width, xsmall)) {
+    @content;
+  }
+}
+
+@mixin small-screens {
+  @media screen and (max-width: map-get($max-width, small)) {
+    @content;
+  }
+}
+
+@mixin medium-screens {
+  @media screen and (min-width: map-get($min-width, medium )) and (max-width: map-get($max-width, medium )) {
+    @content;
+  }
+}
+
+@mixin medium-large-screens {
+  @media screen and (min-width: map-get($min-width, medium)) {
+    @content;
+  }
+}
+
+@mixin large-screens {
+  @media screen and (min-width: map-get($min-width, large)) {
+    @content;
+  }
+}
