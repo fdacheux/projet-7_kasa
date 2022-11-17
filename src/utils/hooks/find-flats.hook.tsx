@@ -29,7 +29,7 @@ export const useFindFlats = () => {
       } finally {
         setLoading(false);
       }
-    }, 1800);
+    }, 1200);
   }, []);
 
   return { isLoading, data, fetch: getFlats, size, error };
