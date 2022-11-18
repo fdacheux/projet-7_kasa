@@ -3,9 +3,9 @@ import RightChevron from "../../../../../assets/images/right-arrow.svg"
 import style from "./Chevrons.module.scss"
 
 const SimpleChevron = (isLeftChevron: boolean) => {
-  const ariaLabel = isLeftChevron
-    ? "Résultats précédents"
-    : "Résultats suivants";
+  const ariaLabel = `Résulats ${isLeftChevron
+    ? "précédents"
+    : "suivants"}`;
   return (
     <button
       //   onClick={() => isLeftChevron ? previous() : next()}

@@ -35,7 +35,7 @@ const Pagination = ({
       </span>
       <div className={style.buttonsContainer}>
         {page > 1 && (
-          <div className={style.backward}>
+          <div>
             <button
               onClick={() => firstPage()}
               className={style.paginationButtons}
@@ -78,7 +78,7 @@ const Pagination = ({
         </div>
 
         {page < pageNumber && (
-          <div className={style.forward}>
+          <div>
             <button onClick={() => next()} className={style.paginationButtons}>
               <img
                 src={RightChevron}
