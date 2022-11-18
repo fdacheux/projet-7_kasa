@@ -24,7 +24,6 @@ const Pagination = ({
   limit,
   page,
 }: PaginationProps) => {
-  console.log(page);
   const { size } = useFindFlats();
   const pageNumber = Math.ceil(size / limit);
 
