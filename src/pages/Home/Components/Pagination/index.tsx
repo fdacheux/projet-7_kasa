@@ -1,30 +1,13 @@
-import { useFindFlats } from "../../../../utils/hooks/find-flats.hook";
-import style from "./Pagination.module.scss";
+import { useContext } from "react";
 import LeftChevron from "../../../../assets/images/left-arrow-primarycolour.svg";
 import RightChevron from "../../../../assets/images/right-arrow-primarycolour.svg";
+import { FlatsContext } from "../../../../utils/context/flatsContext";
+import style from "./Pagination.module.scss";
+import SingleChevron from "./Buttons/SingleChevron";
 
-interface PaginationProps {
-  previous: () => void;
-  next: () => void;
-  firstPage: () => void;
-  lastPage: () => void;
-  goToPage: (number: number) => void;
-  setLimit: React.Dispatch<React.SetStateAction<number>>;
-  limit: number;
-  page: number;
-}
-
-const Pagination = ({
-  previous,
-  next,
-  firstPage,
-  lastPage,
-  goToPage,
-  setLimit,
-  limit,
-  page,
-}: PaginationProps) => {
-  const { size } = useFindFlats();
+const Pagination = () => {
+  const { first, last, goToPage, page, limit, setLimit, size } =
+    useContext(FlatsContext);
   const pageNumber = Math.ceil(size / limit);
 
   return (
@@ -36,7 +19,7 @@ const Pagination = ({
         {page > 1 && (
           <div>
             <button
-              onClick={() => firstPage()}
+              onClick={() => first()}
               className={style.paginationButtons}
               aria-label="Aller à la première page"
             >
@@ -51,17 +34,7 @@ const Pagination = ({
                 className={style.paginationButtons__icon}
               />
             </button>
-            <button
-              onClick={() => previous()}
-              aria-label="Résultats précédents"
-              className={style.paginationButtons}
-            >
-              <img
-                src={LeftChevron}
-                alt=""
-                className={style.paginationButtons__icon}
-              />
-            </button>
+            <SingleChevron isLeftChevron={true} />
           </div>
         )}
         <div className={style.pageNumber}>
@@ -79,19 +52,9 @@ const Pagination = ({
 
         {page < pageNumber && (
           <div>
+            <SingleChevron isLeftChevron={false} />
             <button
-              onClick={() => next()}
-              className={style.paginationButtons}
-              aria-label="Résultats suivants"
-            >
-              <img
-                src={RightChevron}
-                alt=""
-                className={style.paginationButtons__icon}
-              />
-            </button>
-            <button
-              onClick={() => lastPage()}
+              onClick={() => last()}
               className={style.paginationButtons}
               aria-label="Aller à la dernière page"
             >

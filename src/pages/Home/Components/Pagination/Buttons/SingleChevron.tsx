@@ -1,14 +1,21 @@
-import LeftChevron from "../../../../../assets/images/left-arrow.svg"
-import RightChevron from "../../../../../assets/images/right-arrow.svg"
+import { useContext } from "react";
+import LeftChevron from "../../../../../assets/images/left-arrow-primarycolour.svg"
+import RightChevron from "../../../../../assets/images/right-arrow-primarycolour.svg"
+import { FlatsContext } from "../../../../../utils/context/flatsContext";
 import style from "./Chevrons.module.scss"
 
-const SingleChevron = (isLeftChevron: boolean) => {
+interface ISingleChevron {
+  isLeftChevron?: boolean;
+}
+
+const SingleChevron = ({isLeftChevron}: ISingleChevron) => {
+  const { next, previous } = useContext(FlatsContext);
   const ariaLabel = `Résulats ${isLeftChevron
     ? "précédents"
     : "suivants"}`;
   return (
     <button
-      //   onClick={() => isLeftChevron ? previous() : next()}
+        onClick={() => isLeftChevron ? previous() : next()}
       aria-label={ariaLabel}
         className={style.paginationButtons}
     >

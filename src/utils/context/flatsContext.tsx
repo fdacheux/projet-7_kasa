@@ -15,7 +15,11 @@ interface FlatsContextProps {
 interface FlatsContextProviderProps {
   flats: IFlat[];
   isLoading: boolean;
-  fetchFlats: (offset: number, limit: number) => void;
+  previous: () => void;
+  next: () => void;
+  first: () => void;
+  last: () => void;
+  goToPage: (page: number) => void;
   size: number;
   error: boolean;
   page: number;
@@ -30,8 +34,12 @@ const FlatsContext = createContext<FlatsContextProviderProps>({
   error: false,
   page: 1,
   limit: 12,
-  fetchFlats: (offset: number, limit: number) => {},
-  setLimit: (limit: number) => {},
+  previous: () => {},
+  next: () => {},
+  first: () => {},
+  last: () => {},
+  goToPage: (_page: number) => {},
+  setLimit: (_limit: number) => {},
 });
 
 const FlatsContextProvider = ({ children }: FlatsContextProps) => {
@@ -47,6 +55,30 @@ const FlatsContextProvider = ({ children }: FlatsContextProps) => {
     [fetch]
   );
 
+  const previous = useCallback(() => {
+    fetchFlats((page - 1) * limit - limit, limit);
+  }, [fetchFlats, page, limit]);
+
+  const next = useCallback(() => {
+    fetchFlats(page * limit, limit);
+  }, [fetchFlats, page, limit]);
+
+  const first = useCallback(() => {
+    fetchFlats(0, limit);
+  }, [fetchFlats, limit]);
+
+  const last = useCallback(() => {
+    fetch(Math.floor(size / limit) * limit, limit);
+    setPage(Math.ceil(size / limit));
+  }, [fetch, size, limit]);
+
+  const goToPage = useCallback(
+    (pageNumber: number) => {
+      fetchFlats((pageNumber - 1) * limit, limit);
+    },
+    [fetchFlats, limit]
+  );
+
   // fetch a user from a fake backend API
   useEffect(() => {
     fetchFlats(0, limit);
@@ -58,7 +90,11 @@ const FlatsContextProvider = ({ children }: FlatsContextProps) => {
       value={{
         flats,
         isLoading,
-        fetchFlats,
+        previous,
+        next,
+        first,
+        last,
+        goToPage,
         size,
         error,
         page,
