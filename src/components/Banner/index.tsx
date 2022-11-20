@@ -7,13 +7,19 @@ interface Props {
   imgUrl: string;
 }
 
-function Banner({ ...props }: Props) {
+function Banner(props: Props) {
   return (
     // className={`banner ${active ? "active" : ""}`}
-<div className={style.banner}>
+    <div className={style.banner}>
       {props.hasTitle && <h1 className={style.title}>{props.title}</h1>}
       <div className={style.imgContainer}>
-        <img src={props.imgUrl} className={`${style.bannerImg} ${props.isHomepage && style.homepageBannerImg} `} alt="" />
+        <img
+          src={props.imgUrl}
+          className={`${style.bannerImg} ${
+            props.isHomepage && style.homepageBannerImg
+          } `}
+          alt=""
+        />
       </div>
     </div>
   );
