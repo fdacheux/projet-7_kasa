@@ -1,6 +1,6 @@
-import style from "./Selector.module.scss"
+import style from "./CardsPerPageSelector.module.scss"
 
-const Selector = (limit: number, setLimit: any) => {
+const CardsPerPageSelector = (limit: number, setLimit: any) => {
   return (
     <div className={style.paginationOptions}>
         <label htmlFor="limit">Résultats par page : </label>
@@ -21,4 +21,4 @@ const Selector = (limit: number, setLimit: any) => {
   )
 }
 
-export default Selector
+export default CardsPerPageSelector

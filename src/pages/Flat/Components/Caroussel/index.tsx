@@ -19,7 +19,6 @@ const Carousel = ({ pictures, title }: IFlat) => {
     } else if (currentIndex === length - 1) {
       setCurrentIndex(0);
     }
-    console.log(currentIndex);
   };
 
   const previous = () => {
@@ -28,7 +27,6 @@ const Carousel = ({ pictures, title }: IFlat) => {
     } else if (currentIndex === 0) {
       setCurrentIndex(length - 1);
     }
-    console.log(currentIndex);
   };
 
   useEffect(() => {

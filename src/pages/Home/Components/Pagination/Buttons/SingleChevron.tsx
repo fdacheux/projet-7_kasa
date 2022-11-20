@@ -2,7 +2,7 @@ import LeftChevron from "../../../../../assets/images/left-arrow.svg"
 import RightChevron from "../../../../../assets/images/right-arrow.svg"
 import style from "./Chevrons.module.scss"
 
-const SimpleChevron = (isLeftChevron: boolean) => {
+const SingleChevron = (isLeftChevron: boolean) => {
   const ariaLabel = `Résulats ${isLeftChevron
     ? "précédents"
     : "suivants"}`;
@@ -21,4 +21,4 @@ const SimpleChevron = (isLeftChevron: boolean) => {
   );
 };
 
-export default SimpleChevron;
+export default SingleChevron;

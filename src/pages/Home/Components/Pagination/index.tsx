@@ -27,7 +27,6 @@ const Pagination = ({
   const { size } = useFindFlats();
   const pageNumber = Math.ceil(size / limit);
 
-
   return (
     <div className={style.paginationContainer}>
       <span className={style.total}>
@@ -39,6 +38,7 @@ const Pagination = ({
             <button
               onClick={() => firstPage()}
               className={style.paginationButtons}
+              aria-label="Aller à la première page"
             >
               <img
                 src={LeftChevron}
@@ -69,8 +69,8 @@ const Pagination = ({
             <button
               key={`pagination-page${number + 1}of${pageNumber}`}
               className={style.pageNumber__button}
-                  onClick={() => goToPage(number + 1)}
-                  disabled={page === number+1}
+              onClick={() => goToPage(number + 1)}
+              disabled={page === number + 1}
             >
               {number + 1}
             </button>
@@ -79,7 +79,11 @@ const Pagination = ({
 
         {page < pageNumber && (
           <div>
-            <button onClick={() => next()} className={style.paginationButtons}>
+            <button
+              onClick={() => next()}
+              className={style.paginationButtons}
+              aria-label="Résultats suivants"
+            >
               <img
                 src={RightChevron}
                 alt=""
@@ -89,6 +93,7 @@ const Pagination = ({
             <button
               onClick={() => lastPage()}
               className={style.paginationButtons}
+              aria-label="Aller à la dernière page"
             >
               <img
                 src={RightChevron}
@@ -110,13 +115,11 @@ const Pagination = ({
           name="limite"
           id="limit"
           className={style.selectLimit}
-                  onChange={(e: any) => setLimit(parseInt(e?.target?.value))}
-                  defaultValue={limit}
+          onChange={(e: any) => setLimit(parseInt(e?.target?.value))}
+          defaultValue={limit}
         >
-          <option value="6" >6</option>
-          <option value="12" >
-            12
-          </option>
+          <option value="6">6</option>
+          <option value="12">12</option>
           <option value="24">24</option>
         </select>
       </div>

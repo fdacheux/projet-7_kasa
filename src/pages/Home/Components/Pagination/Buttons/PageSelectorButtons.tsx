@@ -1,7 +1,7 @@
 
-import style from "./PageNumberButtons.module.scss"
+import style from "./PageSelectorButtons.module.scss"
 
-const PageNumberButtons = (pageNumber: number, page: number) => {
+const PageSelectorButtons = (pageNumber: number, page: number) => {
   return (
     <div className={style.pageNumber}>
     {[...Array(pageNumber)].map((x, number) => (
@@ -18,4 +18,4 @@ const PageNumberButtons = (pageNumber: number, page: number) => {
   );
 };
 
-export default PageNumberButtons;
+export default PageSelectorButtons;
