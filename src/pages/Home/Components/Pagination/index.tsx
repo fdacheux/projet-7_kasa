@@ -1,126 +1,37 @@
-import { useFindFlats } from "../../../../utils/hooks/find-flats.hook";
 import style from "./Pagination.module.scss";
-import LeftChevron from "../../../../assets/images/left-arrow-primarycolour.svg";
-import RightChevron from "../../../../assets/images/right-arrow-primarycolour.svg";
+import { useContext } from "react";
+import { FlatsContext } from "../../../../utils/context/flatsContext";
+import SingleChevron from "./Buttons/SingleChevron";
+import DoubleChevrons from "./Buttons/DoubleChevrons";
+import PageSelectorButtons from "./Buttons/PageSelectorButtons";
+import CardsPerPageSelector from "./CardsPerPageSelector";
 
-interface PaginationProps {
-  previous: () => void;
-  next: () => void;
-  firstPage: () => void;
-  lastPage: () => void;
-  goToPage: (number: number) => void;
-  setLimit: React.Dispatch<React.SetStateAction<number>>;
-  limit: number;
-  page: number;
-}
-
-const Pagination = ({
-  previous,
-  next,
-  firstPage,
-  lastPage,
-  goToPage,
-  setLimit,
-  limit,
-  page,
-}: PaginationProps) => {
-  console.log(page);
-  const { size } = useFindFlats();
-  const pageNumber = Math.ceil(size / limit);
-
+const Pagination = () => {
+  const { page, pageCount, limit, size } = useContext(FlatsContext);
 
   return (
     <div className={style.paginationContainer}>
       <span className={style.total}>
-        Appartements : {limit * page <= size ? limit * page : size} / {size}
+        Propriétés : {limit * page <= size ? limit * page : size} / {size}
       </span>
       <div className={style.buttonsContainer}>
         {page > 1 && (
-          <div className={style.backward}>
-            <button
-              onClick={() => firstPage()}
-              className={style.paginationButtons}
-            >
-              <img
-                src={LeftChevron}
-                alt=""
-                className={style.paginationButtons__icon}
-              />
-              <img
-                src={LeftChevron}
-                alt=""
-                className={style.paginationButtons__icon}
-              />
-            </button>
-            <button
-              onClick={() => previous()}
-              aria-label="Résultats précédents"
-              className={style.paginationButtons}
-            >
-              <img
-                src={LeftChevron}
-                alt=""
-                className={style.paginationButtons__icon}
-              />
-            </button>
+          <div>
+            <DoubleChevrons isLeftChevron={true} />
+            <SingleChevron isLeftChevron={true} />
           </div>
         )}
-        <div className={style.pageNumber}>
-          {[...Array(pageNumber)].map((x, number) => (
-            <button
-              key={`pagination-page${number + 1}of${pageNumber}`}
-              className={style.pageNumber__button}
-                  onClick={() => goToPage(number + 1)}
-                  disabled={page === number+1}
-            >
-              {number + 1}
-            </button>
-          ))}
-        </div>
 
-        {page < pageNumber && (
-          <div className={style.forward}>
-            <button onClick={() => next()} className={style.paginationButtons}>
-              <img
-                src={RightChevron}
-                alt=""
-                className={style.paginationButtons__icon}
-              />
-            </button>
-            <button
-              onClick={() => lastPage()}
-              className={style.paginationButtons}
-            >
-              <img
-                src={RightChevron}
-                alt=""
-                className={style.paginationButtons__icon}
-              />
-              <img
-                src={RightChevron}
-                alt=""
-                className={style.paginationButtons__icon}
-              />
-            </button>
+        <PageSelectorButtons />
+
+        {page < pageCount && (
+          <div>
+            <SingleChevron isLeftChevron={false} />
+            <DoubleChevrons isLeftChevron={false} />
           </div>
         )}
       </div>
-      <div className={style.paginationOptions}>
-        <label htmlFor="limit">Résultats par page : </label>
-        <select
-          name="limite"
-          id="limit"
-          className={style.selectLimit}
-                  onChange={(e: any) => setLimit(parseInt(e?.target?.value))}
-                  defaultValue={limit}
-        >
-          <option value="6" >6</option>
-          <option value="12" >
-            12
-          </option>
-          <option value="24">24</option>
-        </select>
-      </div>
+      <CardsPerPageSelector />
     </div>
   );
 };
