@@ -23,6 +23,7 @@ interface FlatsContextProviderProps {
   size: number;
   error: boolean;
   page: number;
+  pageCount: number;
   limit: number;
   setLimit: (limit: number) => void;
 }
@@ -33,6 +34,7 @@ const FlatsContext = createContext<FlatsContextProviderProps>({
   size: 0,
   error: false,
   page: 1,
+  pageCount: 1,
   limit: 12,
   previous: () => {},
   next: () => {},
@@ -46,6 +48,7 @@ const FlatsContextProvider = ({ children }: FlatsContextProps) => {
   const { data: flats, isLoading, fetch, size, error } = useFindFlats();
   const [page, setPage] = useState<number>(1);
   const [limit, setLimit] = useState<number>(12);
+  const [pageCount, setPageCount] = useState<number>(1);
 
   const fetchFlats = useCallback(
     (offset: number, limit: number) => {
@@ -84,6 +87,10 @@ const FlatsContextProvider = ({ children }: FlatsContextProps) => {
     fetchFlats(0, limit);
   }, [fetchFlats, limit]);
 
+  useEffect(() => {
+    setPageCount(Math.ceil(size/limit))
+  }, [size, limit])
+
   return (
     // the Provider gives access to the context to its children
     <FlatsContext.Provider
@@ -98,6 +105,7 @@ const FlatsContextProvider = ({ children }: FlatsContextProps) => {
         size,
         error,
         page,
+        pageCount,
         limit,
         setLimit,
       }}

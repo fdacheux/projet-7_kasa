@@ -1,20 +1,23 @@
+import { useContext } from "react";
+import { FlatsContext } from "../../../../../utils/context/flatsContext";
+import style from "./PageSelectorButtons.module.scss";
 
-import style from "./PageSelectorButtons.module.scss"
 
-const PageSelectorButtons = (pageNumber: number, page: number) => {
+const PageSelectorButtons = () => {
+  const { page, pageCount, goToPage } = useContext(FlatsContext);
   return (
-    <div className={style.pageNumber}>
-    {[...Array(pageNumber)].map((x, number) => (
-      <button
-        key={`pagination-page${number + 1}of${pageNumber}`}
-        className={style.pageNumber__button}
-            // onClick={() => goToPage(number + 1)}
-            disabled={page === number+1}
-      >
-        {number + 1}
-      </button>
-    ))}
-  </div>
+    <div className={style.pageCount}>
+      {[...Array(pageCount)].map((x, number) => (
+        <button
+          key={`pagination-page${number + 1}of${pageCount}`}
+          className={style.pageCount__button}
+          onClick={() => goToPage(number + 1)}
+          disabled={page === number + 1}
+        >
+          {number + 1}
+        </button>
+      ))}
+    </div>
   );
 };
 

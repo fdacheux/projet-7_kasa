@@ -1,4 +1,6 @@
-.pageNumber {
+@import "../../../../../style/utils/mixins.scss";
+
+.pageCount {
     display: flex;
     justify-content: center;
     gap: 10px;

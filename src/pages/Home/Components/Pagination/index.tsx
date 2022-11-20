@@ -3,9 +3,10 @@ import { FlatsContext } from "../../../../utils/context/flatsContext";
 import style from "./Pagination.module.scss";
 import SingleChevron from "./Buttons/SingleChevron";
 import DoubleChevrons from "./Buttons/DoubleChevrons";
+import PageSelectorButtons from "./Buttons/PageSelectorButtons";
 
 const Pagination = () => {
-  const { goToPage, page, limit, setLimit, size } =
+  const { goToPage, page, pageCount, limit, setLimit, size } =
     useContext(FlatsContext);
   const pageNumber = Math.ceil(size / limit);
 
@@ -21,7 +22,7 @@ const Pagination = () => {
             <SingleChevron isLeftChevron={true} />
           </div>
         )}
-        <div className={style.pageNumber}>
+        {/* <div className={style.pageNumber}>
           {[...Array(pageNumber)].map((x, number) => (
             <button
               key={`pagination-page${number + 1}of${pageNumber}`}
@@ -32,9 +33,10 @@ const Pagination = () => {
               {number + 1}
             </button>
           ))}
-        </div>
+        </div> */}
+        <PageSelectorButtons  />
 
-        {page < pageNumber && (
+        {page < pageCount && (
           <div>
             <SingleChevron isLeftChevron={false} />
             <DoubleChevrons isLeftChevron={false} />
