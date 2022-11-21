@@ -11,14 +11,10 @@
   width: 100%;
   transition: all 250ms ease-in;
 
+  //Layer on hover
   &:before{
     z-index: 3;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    opacity: 0;
+    @include covering-element("Voir plus", true); //Parameters : content, isHidden(opacity at 0 if true)
     display: flex;
     align-items: center;
     justify-content: center;
@@ -26,7 +22,6 @@
     color: rgb(255, 255, 255);
     font-size: 120%;
     font-weight: 700;
-    content: 'Voir plus';
   }
   &:hover {
     transform: scale(0.97);
@@ -40,28 +35,28 @@
   overflow: hidden;
   display: flex;
   @include border-radius;
-
   @include hundred-percent-sizing;
   &:before {
     @include linearGradient-transparent-mask;
   }
+  &__img{
+    object-fit: cover;
+    @include hundred-percent-sizing;
+
+  }
 }
 
-.temporaryImg {
-  object-fit: cover;
-  @include hundred-percent-sizing;
-}
 
 .title {
   z-index: 2;
   position: absolute;
-  display: flex;
-  align-items: flex-end;
-  line-height: 142%;
   bottom: 20px;
   left: 20px;
   margin-right: 20px;
-  color: white;
+  display: flex;
+  align-items: flex-end;
+  line-height: 142%;
+  color: $colour-secondary;
   font-weight: 500;
   font-size: 18px;
 }

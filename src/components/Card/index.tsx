@@ -10,7 +10,7 @@ function Card({ title = 'Titre de location', cover = `${Img}` }: CardProps) {
   return (
     <article className={style.card}>
       <div className={style.imgBox}>
-        <img src={cover} alt="" className={style.temporaryImg} />
+        <img src={cover} alt="" className={style.imgBox__img} />
       </div>
       <h2 className={style.title}>{title}</h2>
     </article>
