@@ -11,7 +11,7 @@ const Pagination = () => {
 
   return (
     <div className={style.paginationContainer}>
-      <span className={style.total}>
+      <span className={style.totalDisplay}>
         Propriétés : {limit * page <= size ? limit * page : size} / {size}
       </span>
       <div className={style.buttonsContainer}>
