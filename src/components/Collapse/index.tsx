@@ -1,13 +1,17 @@
 import style from "./Collapse.module.scss";
 import UpChevron from "../../assets/images/up-arrow.svg";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import IAboutData from "../../models/about.model";
 
 const Collapse = (props: IAboutData) => {
-  const [isCollapsed, setCollapse] = useState(false);
+  const [isCollapsed, setCollapse] = useState(true);
   const [isActive, setActive] = useState(false);
 
-  const changeCollapse = () => { !isActive && setCollapse(true); setActive(!isActive)};
+  const changeCollapse = useCallback(() => {
+    !isActive && setCollapse(false);
+    setActive((prevStatus) => !prevStatus);
+  }, [isActive,setCollapse, setActive]);
+
   return (
     <article
       className={`${style.accordion}${
@@ -16,26 +20,28 @@ const Collapse = (props: IAboutData) => {
     >
       <button
         onClick={changeCollapse}
-        className={style.headerButton}
-        aria-expanded={isCollapsed}
+        className={style.accordionButton}
+        aria-expanded={!isCollapsed}
       >
-        <h2 className={style.headerButton__header}>{props.title}</h2>
+        <h2 className={style.accordion__title}>{props.title}</h2>
         <img
           src={UpChevron}
-          alt="contenu visible"
+          alt=""
           className={
             isActive
-              ? style.headerButton__chevron
-              : style.headerButton__chevronActive
+              ? style.accordionButton__chevron
+              : style.accordionButton__chevronActive
           }
         />
       </button>
-      {isCollapsed && (
+      {!isCollapsed && (
         <div
-          onAnimationEnd={() => { !isActive && setCollapse(false) } }
-          className={`${style.descriptionBox} ${
+          onAnimationEnd={() => {
+            !isActive && setCollapse(true);
+          }}
+          className={`${style.accordionBody} ${
             props.isHalfWidth && style.halfWidthBox
-          } ${isActive? style.activeBox : style.unactiveBox}`}
+          } ${isActive ? style.expanded : style.collapsed}`}
         >
           {props.children}
         </div>
