@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import Card from "../../../../components/Card";
+import ErrorMessage from "../../../../components/ErrorMessage";
 import Loader from "../../../../components/Loader";
 import { FlatsContext } from "../../../../utils/context/flatsContext";
 import Pagination from "../Pagination";
@@ -30,7 +31,7 @@ function Gallery() {
       )}
     </section>
   ) : (
-    <span data-testid="error">'{error}'</span>
+    <ErrorMessage />
   );
 }
 
