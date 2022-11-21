@@ -3,7 +3,7 @@ import { FlatsContext } from "../../../../../utils/context/flatsContext";
 import style from "./CardsPerPageSelector.module.scss";
 
 const CardsPerPageSelector = () => {
-  const {limit, setLimit} = useContext(FlatsContext)
+  const { limit, setLimit } = useContext(FlatsContext);
 
   return (
     <div className={style.paginationOptions}>

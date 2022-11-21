@@ -4,7 +4,7 @@ import { FlatsContext } from "../../../../utils/context/flatsContext";
 import SingleChevron from "./Buttons/SingleChevron";
 import DoubleChevrons from "./Buttons/DoubleChevrons";
 import PageSelectorButtons from "./Buttons/PageSelectorButtons";
-import CardsPerPageSelector from "./CardsPerPageSelector";
+import CardsPerPageSelector from "./CardsPerPageSelector/index";
 
 const Pagination = () => {
   const { page, pageCount, limit, size } = useContext(FlatsContext);
