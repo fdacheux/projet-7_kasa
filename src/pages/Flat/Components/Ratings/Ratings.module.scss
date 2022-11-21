@@ -1,6 +1,15 @@
-@import '../../../../style/utils/mixins.scss';
+@import "../../../../style/utils/mixins.scss";
 
+.ratingContainer > img {
+  @include sizing-element(20px, 20px);
+  margin-left: 5px;
 
-.ratingContainer>img{
-    @include rating-stars-style;
+  @include medium-screens {
+    @include sizing-element(25px, 25px)
+  }
+  
+  @include large-screens {
+    @include sizing-element(30px, 30px);
+    margin-left: 10px;
+  }
 }
