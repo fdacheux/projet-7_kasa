@@ -4,10 +4,10 @@ import style from "./Error.module.scss";
 function Error() {
   return (
     <main>
-      <section className={style.errorWrapper}>
-        <div className={style.errorBlock}>
-          <h1 className={style.title}>404</h1>
-          <h2 className={style.errorMessage}>
+      <section className={style.errorComponent}>
+        <div className={style.errorComponent__container}>
+          <h1 className={style.errorComponent__title}>404</h1>
+          <h2 className={style.errorComponent__message}>
             Oups! La page que vous demandez n'existe pas.
           </h2>
         </div>
