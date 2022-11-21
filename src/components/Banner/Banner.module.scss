@@ -7,14 +7,14 @@
 }
 
 .bannerImg {
+  overflow: hidden;
+  @include border-radius;
   display: flex;
   justify-content: center;
   width: 100%;
   height: 27vh;
   object-fit: cover;
   object-position: 50% 40%;
-  overflow: hidden;
-  @include border-radius;
 }
 
 .homepageBannerImg {
@@ -28,19 +28,14 @@
   overflow: hidden;
   display: flex;
 
+  // Dark layer :
   &:after {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    @include covering-element("", false); //parameters : content, isHidden(opacity at 0 if true)
+    @include hundred-percent-sizing;
     @include border-radius;
     background-color: black;
     mix-blend-mode: darken;
     opacity: 0.3;
-    content: "";
   }
 }
 
@@ -49,27 +44,27 @@
   position: absolute;
   left: 18px;
   top: 35%;
+  display: inline-block;
+  max-width: 75%;
   color: $colour-secondary;
   font-weight: 500;
   font-size: 1.7em;
-  display: inline-block;
-  max-width: 75%;
   @include xsmall-screens {
+    top: 25%;
     height: 100%;
     max-width: 75%;
     font-size: 1.3em;
-    top: 25%;
   }
   @include medium-large-screens {
-    display: flex;
     margin: 0 auto;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
+    display: flex;
     width: 100%;
-    font-size: 2em;
     align-items: center;
     justify-content: center;
+    font-size: 2em;
   }
 }

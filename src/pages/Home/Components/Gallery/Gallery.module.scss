@@ -17,7 +17,7 @@
     justify-content: space-between;
   }
   &:before{
-    @include hidden-covering-element('');
+    @include covering-element('', true);
     z-index: 5;
     background-color: white;
     transform-origin: bottom;

@@ -16,7 +16,7 @@ function Gallery() {
       ) : (
         <div className={style.gallery}>
           {data &&
-            data.map((flat: any) => (
+            data.map((flat: any, x: number) => (
               <Link
                 key={`flat-${flat.id}`}
                 to={`/flat/${flat.id}`}
