@@ -3,9 +3,9 @@ import LogoLoader from "../../assets/images/logo.svg";
 
 const Loader = () => {
   return (
-    <div className={style.wrapper}>
-      <div className={style.logoContainer}>
-        <img src={LogoLoader} className={style.logo} alt="logo loader" />
+    <div className={style.loader}>
+      <div className={style.loader__logoContainer}>
+        <img src={LogoLoader} className={style.loader__logo} alt="logo loader" />
       </div>
     </div>
   );
