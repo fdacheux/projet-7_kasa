@@ -1,29 +1,28 @@
 @import "../../../../style/utils/mixins.scss";
 
 .descriptionHeaderBox {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    justify-content: space-between;
-    row-gap: 20px;
-    @include medium-large-screens {
-      flex-direction: row;
-    }
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-between;
+  row-gap: 20px;
+  @include medium-large-screens {
+    flex-direction: row;
   }
-  
-  .descriptionHeader {
-    display: flex;
-    flex-direction: column;
-    row-gap: 15px;
-    @include medium-screens {
-      padding-right: 2.7em;
-    }
-    @include large-screens {
-      max-width: 70%;
-    }
+}
+
+.descriptionHeader {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  @include medium-screens {
+    padding-right: 2.7em;
+  }
+  @include large-screens {
+    max-width: 70%;
   }
 
-  .title {
+  &__title {
     font-weight: 500;
     font-size: 1.6em;
     line-height: 1.2em;
@@ -31,29 +30,32 @@
       font-size: 2.3em;
     }
   }
-  
-  .subtitle {
+
+  &__subtitle {
     font-weight: 500;
     font-size: 1.1em;
     @include large-screens {
       font-size: 1.3em;
     }
   }
-  
-  .descriptionAside {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+}
+
+.descriptionMore {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: fit-content;
+
+  @include medium-screens {
     min-width: fit-content;
-    @include medium-screens {
-      min-width: fit-content;
-    }
-    @include medium-large-screens {
-      flex-direction: column-reverse;
-      gap: 10px;
-    }
-    @include large-screens {
-      justify-content: center;
-    }
   }
-  
+
+  @include medium-large-screens {
+    flex-direction: column-reverse;
+    gap: 10px;
+  }
+
+  @include large-screens {
+    justify-content: center;
+  }
+}

@@ -47,11 +47,13 @@ const Carousel = ({ pictures, title }: IFlat) => {
   });
 
   return (
+
     <div
       className={style.carouselContainer}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
+
       {pictures.map((picture: string, index: number) => (
         <img
           src={picture}
@@ -62,11 +64,12 @@ const Carousel = ({ pictures, title }: IFlat) => {
           }`}
         />
       ))}
+
       {length > 2 && (
         <div className={style.carouselContainer__controls}>
           <button
             aria-label="Image précédente"
-            className={style.carouselContainer__leftChevron}
+            className={style.carouselContainer__previousButton}
             onClick={previous}
           >
             <img
@@ -77,7 +80,7 @@ const Carousel = ({ pictures, title }: IFlat) => {
           </button>
           <button
             aria-label="Image suivante"
-            className={`${style.carouselContainer__rightChevron} ${style.carouselButton}`}
+            className={`${style.carouselContainer__nextButton} ${style.carouselButton}`}
             onClick={next}
           >
             <img
@@ -88,6 +91,7 @@ const Carousel = ({ pictures, title }: IFlat) => {
           </button>
         </div>
       )}
+      
       <div className={style.carouselContainer__imagesProgression}>
         <p>{`${currentIndex + 1}/${length}`}</p>
       </div>
