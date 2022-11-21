@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Data from "../../data/data.json";
+import Data from "../../data/flats.data.json";
 import { IFlat } from "../../models/flat.model";
 
 
