@@ -3,7 +3,7 @@ import bannerPicture from "../../assets/images/about-banner-img.jpg";
 import bannerWebpPicture from "../../assets/images/about-banner-img.webp";
 import Collapse from "../../components/Collapse";
 import style from "./About.module.scss";
-import aboutData from "./About.data.json";
+import aboutData from "../../data/about.data.json";
 
 function About() {
   const title = "Nos valeurs ...";
