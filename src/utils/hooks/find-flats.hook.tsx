@@ -8,7 +8,7 @@ const paginate = (array: IFlat[], offset?: number, limit?: number) =>
   array.slice(offset ?? 0, (offset ?? 0) + (limit ?? LIMIT));
 
 export const useFindFlats = () => {
-  const [data, setData] = useState<IFlat[]>();
+  const [data, setData] = useState<IFlat[]>([]);
   const [size] = useState<number>(Data.length);
   const [isLoading, setLoading] = useState(true);
   const [error, setError] = useState(false);
@@ -29,7 +29,7 @@ export const useFindFlats = () => {
       } finally {
         setLoading(false);
       }
-    }, 1800);
+    }, 1200);
   }, []);
 
   return { isLoading, data, fetch: getFlats, size, error };

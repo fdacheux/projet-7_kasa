@@ -5,6 +5,7 @@ body {
   height: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-y: scroll;
   @include is-light-background(true);
 }
 
@@ -28,7 +29,9 @@ main {
   @include medium-large-screens {
     margin: 20px 100px 50px 100px;
   }
+  
 }
+
 
 section {
   display: flex;

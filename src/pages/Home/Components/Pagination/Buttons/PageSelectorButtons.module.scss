@@ -1,0 +1,30 @@
+@import "../../../../../style/utils/mixins.scss";
+
+.pageCount {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    order: -1;
+    margin: 0 30px;
+    width: 100%;
+    @include large-screens {
+      order: 0;
+      margin: 0 10px;
+      width: auto;
+    }
+    &__button {
+      cursor: pointer;
+      border: none;
+      padding: 10px;
+      background-color: transparent;
+      color: $colour-primary;
+      font-size: 1.5em;
+      text-decoration: underline;
+      &:disabled {
+        cursor: unset;
+        color: #804745;
+        text-decoration: none;
+      }
+    }
+  }
+  

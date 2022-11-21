@@ -1,0 +1,14 @@
+@import "../../../../../style/utils/mixins.scss";
+
+.paginationButtons {
+    border: none;
+    background-color: transparent;
+    margin: 0 1em;
+    cursor: pointer;
+    &__icon {
+      height: 1.8em;
+      @include large-screens {
+        height: 2em;
+      }
+    }
+  }
