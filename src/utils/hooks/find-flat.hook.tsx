@@ -13,12 +13,13 @@ const useFindFlat = (flatId: string) => {
   
   const getFlat = useCallback(async () => {
     try {
-      const response = [...Data].find(({ id }) => id === flatId);
-      if (!response) {
-        return errorRedirection("/error");
-      } else {
-        setData([response]);
-      }
+      throw Error ('test')
+      // const response = [...Data].find(({ id }) => id === flatId);
+      // if (!response) {
+      //   return errorRedirection("/error");
+      // } else {
+      //   setData([response]);
+      // }
     } catch (err: any) {
       console.log(err.message);
       setError(err?.message);

@@ -8,6 +8,7 @@ import DescriptionContent from "./Components/DescriptionContent";
 import useFindFlat from "../../utils/hooks/find-flat.hook";
 
 import style from "./Flat.module.scss";
+import ErrorMessage from "../../components/ErrorMessage";
 
 const Flat = () => {
   let { id } = useParams();
@@ -15,22 +16,19 @@ const Flat = () => {
   const { data, isLoading, error } = useFindFlat(id || "");
   let flat = data ? { ...data[0] } : undefined;
 
+  const render = () => {
+    return !error && flat ? (
+      <article className={style.flatContent}>
+        <Carousel {...flat} />
+        <DescriptionHeader {...flat} />
+        <DescriptionContent {...flat} />
+      </article>
+    ) : (
+      <ErrorMessage />
+    );
+  };
 
-  return (
-    <main>
-      {isLoading ? (
-        <Loader />
-      ) : !error && flat ? (
-        <article className={style.flatContent}>
-          <Carousel {...flat} />
-          <DescriptionHeader {...flat} />
-          <DescriptionContent {...flat} />
-        </article>
-      ) : (
-        <span data-testid="error">'{error}'</span>
-      )}
-    </main>
-  );
+  return <main>{isLoading ? <Loader /> : render()}</main>;
 };
 
 export default Flat;
