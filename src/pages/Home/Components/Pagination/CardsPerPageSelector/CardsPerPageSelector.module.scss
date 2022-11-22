@@ -2,25 +2,26 @@
 @import "../../../../../style/utils/mixins.scss";
 
 .selectLimit {
-    margin-bottom: 40px;
-    margin-left: 12px;
-    height: 2em;
-    border-radius: 5px;
-    border: $colour-primary solid 3px;
-    background-color: $colour-primary;
-    color: $colour-secondary;
-    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.247);
+  margin-bottom: 40px;
+  margin-left: 12px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.247);
+  border-radius: 5px;
+  border: $colour-primary solid 3px;
+  height: 2em;
+  cursor: pointer;
+  background-color: $colour-primary;
+  color: $colour-secondary;
+  font-size: 1.3em;
+
+  & > * {
     font-size: 1.3em;
-  
-    & > * {
-      font-size: 1.3em;
-      color: $colour-secondary;
-    }
-    &:checked {
-      color: $colour-primary;
-    }
-    @include medium-large-screens {
-      margin-bottom: 0;
-      font-size: 1em;
-    }
+    color: $colour-secondary;
   }
+  &:checked {
+    color: $colour-primary;
+  }
+  @include medium-large-screens {
+    margin-bottom: 0;
+    font-size: 1em;
+  }
+}

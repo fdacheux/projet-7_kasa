@@ -11,14 +11,14 @@ const DescriptionHeader = ({ title, location, tags, rating, host } : IFlat) => {
       aria-label={`${title} : informations principales`}
     >
       <header className={style.descriptionHeader}>
-        <h1 className={style.title}>{title}</h1>
-        <h2 className={style.subtitle}>{location}</h2>
+        <h1 className={style.descriptionHeader__title}>{title}</h1>
+        <h2 className={style.descriptionHeader__subtitle}>{location}</h2>
         <Tags tags={tags} />
       </header>
-      <aside className={style.descriptionAside}>
+      <div className={style.descriptionMore}>
         <Ratings stars={rating} />
         <Host {...host} />
-      </aside>
+      </div>
     </section>
   );
 };

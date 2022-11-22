@@ -1,14 +1,17 @@
+import { useCallback } from "react";
 import { NavLink } from "react-router-dom";
 import style from "./Navbar.module.scss";
 
 function Navbar() {
-  let activeClassName = style.underline;
-  const defineClassName = (isActive: boolean) => {
+
+  const defineClassName = useCallback((isActive: boolean) => {
+    let activeClassName = style.underline;
     let className = isActive
       ? `${activeClassName} ${style.navbar__links}`
       : style.navbar__links;
     return className;
-  };
+  }, []);
+
 
   return (
     <nav>

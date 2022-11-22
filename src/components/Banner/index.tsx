@@ -4,15 +4,16 @@ interface Props {
   isHomepage?: boolean;
   hasTitle: boolean;
   title?: string;
+  imgWebpUrl: string;
   imgUrl: string;
 }
 
 function Banner(props: Props) {
   return (
-    // className={`banner ${active ? "active" : ""}`}
     <div className={style.banner}>
       {props.hasTitle && <h1 className={style.title}>{props.title}</h1>}
-      <div className={style.imgContainer}>
+      <picture className={style.imgContainer}>
+        <source type="image/webp" srcSet={props.imgWebpUrl} />
         <img
           src={props.imgUrl}
           className={`${style.bannerImg} ${
@@ -20,7 +21,7 @@ function Banner(props: Props) {
           } `}
           alt=""
         />
-      </div>
+      </picture>
     </div>
   );
 }

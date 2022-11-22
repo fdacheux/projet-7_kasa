@@ -3,6 +3,7 @@
 .navbar {
   display: flex;
   justify-content: space-between;
+
   &__links {
     font-size: 16px;
 
@@ -16,8 +17,10 @@
       font-size: 14px;
     }
   }
+
   &__aboutLink {
     padding-left: 24px;
+
     @include large-screens {
       padding-left: 57px;
     }
@@ -25,8 +28,10 @@
       padding-left: 12px;
     }
   }
+
   &__listElement {
     transition: transform 250ms ease-in;
+    
     &:hover {
       transform: scale(1.2);
     }

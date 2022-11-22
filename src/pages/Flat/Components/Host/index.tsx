@@ -3,9 +3,9 @@ import style from "./Host.module.scss";
 
 const Host = ({ name, picture }: IHost) => {
   return (
-    <div className={style.hostContainer}>
-      <div className={style.hostName}>{name}</div>
-      <img src={picture} alt={name} className={style.avatar} />
+    <div className={style.hostComponent}>
+      <div className={style.hostComponent__name}>{name}</div>
+      <img src={picture} alt={name} className={style.hostComponent__avatar} />
     </div>
   );
 };

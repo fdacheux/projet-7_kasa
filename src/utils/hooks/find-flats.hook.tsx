@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import Data from "../../data/data.json";
+import Data from "../../data/flats.data.json";
 import { IFlat } from "../../models/flat.model";
 
 const LIMIT = 10;

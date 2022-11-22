@@ -1,21 +1,25 @@
 @import "../../style/utils/mixins.scss";
 
-.wrapper {
+.loader {
   margin: auto;
-}
 
-.logoContainer {
-  transform: translateZ(1px);
-}
-.logo {
-  display: inline-block;
-  margin: 8px;
-  height: 100px;
-  animation: spinning-logo 8s cubic-bezier(0, 0.2, 0.8, 1) infinite;
-  @include xsmall-screens {
-    height: 60px;
+  &__logoContainer {
+    transform: translateZ(1px);
+  }
+
+  &__logo {
+    display: inline-block;
+    margin: 8px;
+    height: 100px;
+    animation: spinning-logo 8s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+    @include xsmall-screens {
+      height: 60px;
+    }
   }
 }
+
+// Animations:
+
 @keyframes spinning-logo {
   0%,
   100% {

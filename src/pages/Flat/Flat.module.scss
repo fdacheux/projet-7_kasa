@@ -4,8 +4,8 @@
   display: flex;
   flex-direction: column;
   align-content: space-between;
-  height: 90%;
   row-gap: 20px;
+  height: 90%;
   @include medium-large-screens {
     row-gap: 32px;
   }

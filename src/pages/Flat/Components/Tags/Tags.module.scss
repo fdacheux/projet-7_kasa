@@ -8,19 +8,17 @@
 } 
 
 .tag {
-    @include is-light-background(false);
-    border-radius: get-radius('small');
     margin-right: 10px;
-    height: 25px;
-    width: 155px;
+    border-radius: get-radius('small');
+    @include is-light-background(false);
+    @include sizing-element(25px, 155px);
     text-align: center;
     line-height: 25px;
     font-size: 16px;
     @include large-screens{
-        font-size: 18px;
-        width: 175px;
-        height: 31px;
-        line-height: 31px;
         border-radius: get-radius('medium');
+        @include sizing-element(31px, 175px);
+        line-height: 31px;
+        font-size: 18px;
     }
 }

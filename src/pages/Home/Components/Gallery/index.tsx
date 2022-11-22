@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import Card from "../../../../components/Card";
+import ErrorMessage from "../../../../components/ErrorMessage";
 import Loader from "../../../../components/Loader";
 import { FlatsContext } from "../../../../utils/context/flatsContext";
 import Pagination from "../Pagination";
@@ -16,7 +17,7 @@ function Gallery() {
       ) : (
         <div className={style.gallery}>
           {data &&
-            data.map((flat: any) => (
+            data.map((flat: any, x: number) => (
               <Link
                 key={`flat-${flat.id}`}
                 to={`/flat/${flat.id}`}
@@ -30,7 +31,7 @@ function Gallery() {
       )}
     </section>
   ) : (
-    <span data-testid="error">'{error}'</span>
+    <ErrorMessage />
   );
 }
 
