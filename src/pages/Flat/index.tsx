@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 
 import Loader from "../../components/Loader";
-import Carousel from "./Components/Caroussel/index";
+import Carousel from "./Components/Carousel/index";
 import DescriptionHeader from "./Components/DescriptionHeader";
 import DescriptionContent from "./Components/DescriptionContent";
 
