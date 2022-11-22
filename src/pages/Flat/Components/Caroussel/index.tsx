@@ -2,7 +2,7 @@ import { IFlat } from "../../../../models/flat.model";
 import style from "./Carousel.module.scss";
 import LeftChevron from "../../../../assets/images/left-arrow.svg";
 import RightChevron from "../../../../assets/images/right-arrow.svg";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 const Carousel = ({ pictures, title }: IFlat) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -13,21 +13,21 @@ const Carousel = ({ pictures, title }: IFlat) => {
     setLength(pictures.length);
   }, [pictures]);
 
-  const next = () => {
+  const next = useCallback(() => {
     if (currentIndex < length - 1) {
       setCurrentIndex((prevState) => prevState + 1);
     } else if (currentIndex === length - 1) {
       setCurrentIndex(0);
     }
-  };
+  }, [currentIndex, length]);
 
-  const previous = () => {
+  const previous = useCallback(() => {
     if (currentIndex > 0) {
       setCurrentIndex((prevState) => prevState - 1);
     } else if (currentIndex === 0) {
       setCurrentIndex(length - 1);
     }
-  };
+  }, [currentIndex, length]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -47,13 +47,11 @@ const Carousel = ({ pictures, title }: IFlat) => {
   });
 
   return (
-
     <div
       className={style.carouselContainer}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-
       {pictures.map((picture: string, index: number) => (
         <img
           src={picture}
@@ -91,7 +89,7 @@ const Carousel = ({ pictures, title }: IFlat) => {
           </button>
         </div>
       )}
-      
+
       <div className={style.carouselContainer__imagesProgression}>
         <p>{`${currentIndex + 1}/${length}`}</p>
       </div>

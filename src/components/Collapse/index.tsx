@@ -10,7 +10,7 @@ const Collapse = (props: IAboutData) => {
   const changeCollapse = useCallback(() => {
     !isActive && setCollapse(false);
     setActive((prevStatus) => !prevStatus);
-  }, [isActive,setCollapse, setActive]);
+  }, [isActive]);
 
   return (
     <article
