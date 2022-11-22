@@ -1,10 +1,11 @@
 {
   "files": {
-    "main.css": "/projet-7_kasa/static/css/main.fc1b7c9b.css",
-    "main.js": "/projet-7_kasa/static/js/main.20f2da1d.js",
-    "static/js/787.28cb0dcd.chunk.js": "/projet-7_kasa/static/js/787.28cb0dcd.chunk.js",
+    "main.css": "/projet-7_kasa/static/css/main.66e7c182.css",
+    "main.js": "/projet-7_kasa/static/js/main.f5b9961d.js",
+    "static/media/about-banner-img.jpg": "/projet-7_kasa/static/media/about-banner-img.161cc9194b8fa99b3ed4.jpg",
     "static/media/about-banner-img.webp": "/projet-7_kasa/static/media/about-banner-img.20164aa535622343e0ff.webp",
     "static/media/home-banner-img.webp": "/projet-7_kasa/static/media/home-banner-img.4c6d1702543970b6e31c.webp",
+    "static/media/home-banner-img.jpg": "/projet-7_kasa/static/media/home-banner-img.053687a54587bf187cfc.jpg",
     "static/media/logo.svg": "/projet-7_kasa/static/media/logo.ac38b36ec692f2f5731bc84c1ac2030e.svg",
     "static/media/white-logo.svg": "/projet-7_kasa/static/media/white-logo.2553fb29683f2c12e44904bd8503bf1b.svg",
     "index.html": "/projet-7_kasa/index.html",
@@ -15,12 +16,11 @@
     "static/media/left-arrow.svg": "/projet-7_kasa/static/media/left-arrow.e1c831f025531aaa34d3eb308a748ce2.svg",
     "static/media/empty-star.svg": "/projet-7_kasa/static/media/empty-star.06dccca447400012db124c595a41e219.svg",
     "static/media/full-star.svg": "/projet-7_kasa/static/media/full-star.325cf1d54d109e062e0d0468f6412f00.svg",
-    "main.fc1b7c9b.css.map": "/projet-7_kasa/static/css/main.fc1b7c9b.css.map",
-    "main.20f2da1d.js.map": "/projet-7_kasa/static/js/main.20f2da1d.js.map",
-    "787.28cb0dcd.chunk.js.map": "/projet-7_kasa/static/js/787.28cb0dcd.chunk.js.map"
+    "main.66e7c182.css.map": "/projet-7_kasa/static/css/main.66e7c182.css.map",
+    "main.f5b9961d.js.map": "/projet-7_kasa/static/js/main.f5b9961d.js.map"
   },
   "entrypoints": [
-    "static/css/main.fc1b7c9b.css",
-    "static/js/main.20f2da1d.js"
+    "static/css/main.66e7c182.css",
+    "static/js/main.f5b9961d.js"
   ]
 }
