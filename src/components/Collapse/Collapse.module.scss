@@ -25,6 +25,7 @@
   align-items: center;
   border: none;
   border-radius: 5px;
+  cursor: pointer;
   height: 40px;
   width: 100%;
   padding: 1em;
@@ -39,7 +40,7 @@
 }
 
 .accordionBody {
-  border-radius: 5px;
+  border-radius: 0px 0px 5px 5px;
   background-color: $colour-tertiary;
   padding: 1.1em;
 
