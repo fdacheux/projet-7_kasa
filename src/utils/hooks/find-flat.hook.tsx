@@ -25,7 +25,7 @@ const useFindFlat = (flatId: string) => {
       } finally {
         setLoading(false);
       }
-    }, 1800);
+    }, 1200);
   }, [flatId, errorRedirection]);
 
   useEffect(() => {

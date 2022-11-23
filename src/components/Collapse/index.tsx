@@ -1,6 +1,6 @@
 import style from "./Collapse.module.scss";
 import UpChevron from "../../assets/images/up-arrow.svg";
-import { useCallback, useState } from "react";
+import { useCallback,  useState } from "react";
 import IAboutData from "../../models/about.model";
 
 const Collapse = (props: IAboutData) => {
@@ -8,10 +8,11 @@ const Collapse = (props: IAboutData) => {
   const [isActive, setActive] = useState(false);
 
   const changeCollapse = useCallback(() => {
-    !isActive && setCollapse(false);
     setActive((prevStatus) => !prevStatus);
+    !isActive && setCollapse(false);
   }, [isActive]);
 
+  
   return (
     <article
       className={`${style.accordion}${
