@@ -8,8 +8,8 @@ const Collapse = (props: IAboutData) => {
   const [isActive, setActive] = useState(false);
 
   const changeCollapse = useCallback(() => {
-    setActive((prevStatus) => !prevStatus);
     !isActive && setCollapse(false);
+    setActive((prevStatus) => !prevStatus);
   }, [isActive]);
 
   
